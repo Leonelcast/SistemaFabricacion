@@ -6,12 +6,27 @@ POST http://localhost:5000/api/dispositivos
 Content-Type: application/json
 
 {
-    "numeroSerie": "hsahdsaldkdd",
-    "modelo":"alkdsalndlsadkn",
-    "marca": "ksandlsandsal",
+    "numeroSerie": "Eliminar",
+    "modelo":"qwert",
+    "marca": "qwdf",
     "tipo": "Smartphone",
     "memoria": "128",
     "procesador": "hola",
     "resolucion":"1080",
     "precio":1000
+}
+
+###
+GET http://localhost:5000/api/dispositivos/60147e938f519b0f20d489f0
+
+###
+DELETE http://localhost:5000/api/dispositivos/6014835e111a280e203dd539
+
+###
+PUT http://localhost:5000/api/dispositivos/60122dc3d2e3e11640fa06ee
+Content-Type: application/json
+
+{
+    "numeroSerie": "ActualizadoJAJA"
+
 }
