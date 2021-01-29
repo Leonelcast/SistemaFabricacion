@@ -1,0 +1,17 @@
+###
+GET http://localhost:5000/api/dispositivos
+
+###
+POST http://localhost:5000/api/dispositivos
+Content-Type: application/json
+
+{
+    "numeroSerie": "hsahdsaldkdd",
+    "modelo":"alkdsalndlsadkn",
+    "marca": "ksandlsandsal",
+    "tipo": "Smartphone",
+    "memoria": "128",
+    "procesador": "hola",
+    "resolucion":"1080",
+    "precio":1000
+}
