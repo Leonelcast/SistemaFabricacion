@@ -13,7 +13,7 @@ dispositivosController.createDispositivos = async  (req, res) => {
     await newDispositivo.save()
     console.log(req.body)
 
-    res.send('empleado creado')
+    res.json('empleado creado')
 }
 
 dispositivosController.getDispositivo = async (req, res) => {

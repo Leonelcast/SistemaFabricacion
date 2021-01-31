@@ -17,10 +17,15 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/api/dispositivos/60147e938f519b0f20d489f0
+GET http://localhost:5000/api/dispositivos
 
 ###
-DELETE http://localhost:5000/api/dispositivos/6014835e111a280e203dd539
+DELETE http://localhost:5000/api/dispositivos
+Content-Type: application/json
+
+{
+    "marca": "wer"
+}
 
 ###
 PUT http://localhost:5000/api/dispositivos/60122dc3d2e3e11640fa06ee
