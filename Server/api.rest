@@ -1,5 +1,5 @@
 ###
-GET http://localhost:5000/api/dispositivos
+GET http://localhost:5000/api/users
 
 ###
 POST http://localhost:5000/api/dispositivos
@@ -20,12 +20,8 @@ Content-Type: application/json
 GET http://localhost:5000/api/dispositivos
 
 ###
-DELETE http://localhost:5000/api/dispositivos
-Content-Type: application/json
+DELETE http://localhost:5000/api/users/60441c9a38ab18207cc23d86
 
-{
-    "marca": "wer"
-}
 
 ###
 PUT http://localhost:5000/api/dispositivos/60122dc3d2e3e11640fa06ee
@@ -34,4 +30,21 @@ Content-Type: application/json
 {
     "numeroSerie": "ActualizadoJAJA"
 
+}
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "email": "Leo@gmail.com",
+    "password":"password"
+}
+
+###
+POST http://localhost:5000/api/users/signIn
+Content-Type: application/json
+
+{
+    "email": "Leo@gmail.com",
+    "password":"hola"
 }

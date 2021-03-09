@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost/dispositivos", {
+mongoose.connect("mongodb://localhost/Fabrica", {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
