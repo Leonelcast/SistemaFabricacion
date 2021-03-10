@@ -1,1 +1,30 @@
-<p>catalogo-cliente works!</p>
+<div class="row">
+    <div class="col-md-8">
+        <div class="container-lg">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Clientes</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>NOMBRE</th>
+                                <th>EMAIL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of authService.user">
+                                <td>{{user.nombre}}</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

@@ -8,7 +8,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CatalogoClienteComponent } from './components/catalogo-cliente/catalogo-cliente.component';
 import { AppRoutingModule } from './app-routing.module';
-import {AuthGuard} from './auth.guard'
+import {AuthGuard} from './auth.guard';
+import { PedidoComponent } from './components/pedido/pedido.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {AuthGuard} from './auth.guard'
     DispositivosComponent,
     SignupComponent,
     SigninComponent,
-    CatalogoClienteComponent
+    CatalogoClienteComponent,
+    PedidoComponent
   ],
   imports: [
     BrowserModule,
