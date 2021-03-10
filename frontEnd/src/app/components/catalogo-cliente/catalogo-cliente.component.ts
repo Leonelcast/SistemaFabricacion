@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { NgForm } from '@angular/forms';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-catalogo-cliente',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogoClienteComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+  getUser() {
+    this.authService.getUser().subscribe(
+      res =>{
+        this.authService.user = res;
+      },
+      err => console.error(err)
+    );
   }
 
 }
