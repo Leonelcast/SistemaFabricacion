@@ -19,7 +19,7 @@ export class DispositivosComponent implements OnInit {
 
   addDispositivo(form: NgForm) {
    if(form.value._id){
-     this.dispositivoService.putDispositivo(form.value._id).subscribe(
+     this.dispositivoService.putDispositivo(form.value).subscribe(
       res => {
         this.getDispositivos();
       },
@@ -29,7 +29,6 @@ export class DispositivosComponent implements OnInit {
     this.dispositivoService.createDispositivo(form.value).subscribe(
       res => {
         this.getDispositivos();
-        form.reset();
       },
       err => console.error(err)
     )

@@ -9,5 +9,5 @@ export interface Dispositivo {
     resolucion: string,
     tipo: string,
     updatedAt?: string,
-    _id: string
+    _id?: string
     }

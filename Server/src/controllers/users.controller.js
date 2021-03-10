@@ -2,6 +2,7 @@ const usersController = {}
 const { Router } = require('express');
 const Users = require('../models/users')
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt')
 
 
 
@@ -10,44 +11,54 @@ usersController.getUsers = async (req, res) => {
     res.json(users)
 }
 //CREATE
-usersController.createUsers = async  (req, res) => {
+usersController.createUsers = async (req, res) => {
     const newUser = new Users(req.body);
     await newUser.save();
-    const token = jwt.sign({_id: newUser._id}, 'secretkey');
-    res.status(200).json({token});
-    console.log(req.body)
+    const token = jwt.sign({ _id: newUser._id }, 'secretkey');
+    res.status(200).json({ token });
     res.json('empleado creado')
 
 }
 usersController.SingIn = async (req, res) => {
-    const { email, password } = req.body;
+    const { email} = req.body;
     const user = await Users.findOne({email})
-    if (!user) return res.status(401).send("no existe");
-    if (user.password !== password) return res.status(401).send('contraseña incorrecta');
-
-    const token = jwt.sign({_id:user._id}, 'secretkey');
-    res.status(200).json({token});
+    if (!user) return res.status(401).send("no existe")
+     try {
+        if (await bcrypt.compare(req.body.password, user.password)) {
+            const token = jwt.sign({_id:user._id}, 'secretkey');
+            res.status(200).json({token});
+        } else {
+            res.send('no puede ingresar')
+        }
+    }
+    catch {
+        res.status(501).send()
+    }
 }
 
+
+
+
+
 usersController.getUser = async (req, res) => {
-   const user = await Users.findById(req.params.id)
+    const user = await Users.findById(req.params.id)
     res.send(user)
 }
 //UPDATE
 usersController.updateUsers = async (req, res) => {
     await Users.findByIdAndUpdate(req.params.id, req.body)
-    res.json({status: 'Usuario actualizado'})
+    res.json({ status: 'Usuario actualizado' })
 }
 
 //DELETE
 usersController.deleteUsers = async (req, res) => {
-   await Users.findByIdAndDelete(req.params.id)
-    res.json({status: 'Usuario eliminado'})
+    await Users.findByIdAndDelete(req.params.id)
+    res.json({ status: 'Usuario eliminado' })
 
 }
 
-function verifytoken(req, res, next){
-    
+function verifytoken(req, res, next) {
+
 }
 
 module.exports = usersController;
