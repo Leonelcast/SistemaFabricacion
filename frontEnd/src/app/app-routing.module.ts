@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule, Router} from '@angular/router'
 import { CommonModule } from '@angular/common';
+import {AuthGuard} from './auth.guard'
 
 
 //COMPONENTS
@@ -22,11 +23,13 @@ const routes: Routes = [
   },
   {
     path: 'catalogoCliente',
-    component:CatalogoClienteComponent
+    component:CatalogoClienteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dispositivos',
-    component:DispositivosComponent
+    component:DispositivosComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

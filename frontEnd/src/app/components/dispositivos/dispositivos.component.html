@@ -5,10 +5,10 @@
 
                 <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
                  
-                        <input type="hidden" name="_id" [(ngModel)]="dispositivoService.selectedDispositivo._id">
-                    
-
-
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" placeholder="_id" name="_id"
+                            [(ngModel)]="dispositivoService.selectedDispositivo._id">
+                    </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder=" Marca" name="marca"
                             [(ngModel)]="dispositivoService.selectedDispositivo.marca">
@@ -71,7 +71,7 @@
                                 <th>RESOLUCION</th>
                                 <th>TIPO</th>
                                 <th>PRECIO</th>
-                                <th>ACCIONES</th>
+                                <th>EDITAR/ELIMINAR</th>
                             </tr>
                         </thead>
                         <tbody>
