@@ -1,6 +1,11 @@
 ###
-GET http://localhost:5000/api/users
+GET http://localhost:5000/api/pedidos
 
+###
+GET http://localhost:5000/api/dispositivos
+
+###
+GET http://localhost:5000/api/roles
 ###
 POST http://localhost:5000/api/dispositivos
 Content-Type: application/json
@@ -35,9 +40,12 @@ Content-Type: application/json
 POST http://localhost:5000/api/users
 Content-Type: application/json
 
-{
-    "email": "LeonelCI@gmail.com",
-    "password":"password"
+{   
+    "email": "Tigo",
+    "email": "LeoneI@gmail.com",
+    "password":"password",
+    "roles": "hola"
+
 }
 
 ###
@@ -47,4 +55,26 @@ Content-Type: application/json
 {
     "email": "LeonelCI@gmail.com",
     "password":"qwer"
+}
+
+
+###
+POST http://localhost:5000/api/roles
+Content-Type: application/json
+
+{
+    "roles": "Fabricante"
+}
+
+###
+POST http://localhost:5000/api/pedidos
+Content-Type: application/json
+
+{
+  "cantidad": 5,
+  "total": 458,
+  "fecha_p": "03-10-2021",
+  "fecha_e": "03-15-2021",
+  "dispositivo": "6046a9ed5181b70314f6d352",
+  "user": "60441ce038ab18207cc23d87"
 }
