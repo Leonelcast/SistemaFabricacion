@@ -20,22 +20,22 @@ export class PedidoService {
 
   };
 
-  dispositivos: Pedidos[] = [];
+  pedido: Pedidos[] = [];
 
   constructor(private http: HttpClient) { }
 
-  getDispositivos(){
+  getPedidos(){
 
-    return this.http.get<Dispositivo[]>(this.URL_API);
+    return this.http.get<Pedidos[]>(this.URL_API);
   }
-  createDispositivo(dispositivo: Dispositivo){
-    return this.http.post<string>(this.URL_API, dispositivo);
+  createPedido(pedido: Pedidos){
+    return this.http.post<string>(this.URL_API, pedido);
   }
-  putDispositivo(dispositivo: Dispositivo){
-    return this.http.put(`${this.URL_API}/${dispositivo._id}`, dispositivo);
+  putPedido(pedido: Pedidos){
+    return this.http.put(`${this.URL_API}/${pedido._id}`, pedido);
 
   }
-  deleteDispositivo(_id: string){
+  deletePedido(_id: string){
     return this.http.delete(`${this.URL_API}/${_id}`)
   }
 }

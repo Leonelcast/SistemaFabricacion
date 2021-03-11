@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { User } from '../../models/user';
-import { DispositivoService } from '../../services/dispositivo.service';
+import { PedidoService } from '../../services/pedido.service';
 import { NgForm } from '@angular/forms';
-import { Dispositivo } from '../../models/dispositivos'
+import { Pedidos } from '../../models/pedido'
 
 
 
@@ -15,34 +13,46 @@ import { Dispositivo } from '../../models/dispositivos'
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(public authService: AuthService, public dispositivoService: DispositivoService) { }
-
-  
-
+  constructor(public pedidoService: PedidoService){}
   ngOnInit(): void {
-   
-  }
-  getUser() {
-    this.authService.getUser().subscribe(
-      res =>{
-        this.authService.user = res;
-      },
-      err => console.error(err)
-    );
+    this.getPedidos();
   }
 
+  addPedido(form: NgForm) {
   
-  getDispositivos() {
-    this.dispositivoService.getDispositivos().subscribe(
-      res => {
-        this.dispositivoService.dispositivos = res;
-      },
-      err => console.error(err)
-    );
-
-  }
-
-  nPedido(from:NgForm){
+     this.pedidoService.createPedido(form.value).subscribe(
+       res => {
+         this.getPedidos();
+       },
+       err => console.error(err)
+     )
+    
+   }
    
-  }
+ 
+ 
+ 
+   getPedidos() {
+     this.pedidoService.getPedidos().subscribe(
+       res => {
+         this.pedidoService.pedido = res;
+       },
+       err => console.error(err)
+     );
+ 
+   }
+
+ 
+   deletePedido(id: string) {
+     if (confirm('¿estas seguro de que lo quieres eliminar?')) {
+       this.pedidoService.deletePedido(id).subscribe(
+         (res) => {
+           this.getPedidos();
+         },
+         (err) => console.error(err)
+       );
+     }
+ 
+   }
+ 
 }
