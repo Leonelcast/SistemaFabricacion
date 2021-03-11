@@ -36,7 +36,10 @@ usersController.SingIn = async (req, res) => {
     }
 }
 
-
+usersController.getRol = async (req, res) => {
+    const users = await Users.findById(req.params.roles)
+    res.json(users)
+}
 
 
 

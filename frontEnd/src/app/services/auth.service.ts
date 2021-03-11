@@ -25,6 +25,8 @@ export class AuthService {
      return !!localStorage.getItem('token')
    }
 
+  
+
    logOut(){
      localStorage.removeItem('token');
      this.router.navigate(['/signIn'])
@@ -32,6 +34,7 @@ export class AuthService {
 
    URL_API = 'http://localhost:5000/api/users';
   selectedUser: User={
+    roles:"",
     _id:"",
     nombre:"",
     email:""
@@ -40,4 +43,8 @@ export class AuthService {
   getUser(){
     return this.http.get<User[]>(this.URL_API);
   }
+
+  rol(){
+    return// this.http.(this.URL_API);
+   }
 }

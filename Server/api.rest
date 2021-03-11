@@ -1,5 +1,5 @@
 ###
-GET http://localhost:5000/api/pedidos
+GET     http://localhost:5000/api/users/roles
 
 ###
 GET http://localhost:5000/api/dispositivos
@@ -63,7 +63,7 @@ POST http://localhost:5000/api/roles
 Content-Type: application/json
 
 {
-    "roles": "Fabricante"
+    "roles": "Cliente"
 }
 
 ###

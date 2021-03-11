@@ -6,7 +6,7 @@ nombre:{type: String, require: true},
 email:{type: String, require: true},
 password:{type: String, require: true},
 roles: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId, default: '60497a8ae2b1596118284fd4',
     ref: 'Roles'
 }
 });
