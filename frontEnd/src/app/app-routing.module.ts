@@ -9,6 +9,7 @@ import{SigninComponent} from './components/signin/signin.component'
 import{SignupComponent} from './components/signup/signup.component'
 import{CatalogoClienteComponent} from './components/catalogo-cliente/catalogo-cliente.component'
 import{DispositivosComponent} from './components/dispositivos/dispositivos.component'
+import{PedidoComponent} from './components/pedido/pedido.component'
 
 
 
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path: 'dispositivos',
     component:DispositivosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'pedidos',
+    component:PedidoComponent,
     canActivate: [AuthGuard]
   }
 ];
