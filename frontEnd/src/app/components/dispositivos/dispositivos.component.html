@@ -3,15 +3,15 @@
         <div class="card">
             <div class="card-body">
 
-                <form #dispositivoForm="ngForm" (ngSubmit)="updateDispositivos(dispositivoForm)">
-                 
+                <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
                     <div class="form-group">
-                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="dispositivoService.selectedDispositivo._id">
+                        <input type="hidden" name="_id"
+                        [(ngModel)]="dispositivoService.selectedDispositivo._id">
                     </div>
                     
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder=" Marca" name="marca"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                        [(ngModel)]="dispositivoService.selectedDispositivo.marca">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Memoria" name="memoria"
@@ -85,9 +85,15 @@
                                 <td>{{dispositivo.tipo}}</td>
                                 <td>{{dispositivo.precio}}</td>
                                 <td>
+<<<<<<< HEAD
                                    
                                             <button (click)="editDipositivo(dispositivo)" class="btn btn-secondary btn-sm">
                                             <i class="material-icons">edit</i></button>
+=======
+                                    <button class="btn btn-primary bt-sm" (click)="editDipositivo(dispositivo)">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+>>>>>>> eve
                                     <button class="btn btn-danger bt-sm" (click)="deleteDispositivo(dispositivo._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>
