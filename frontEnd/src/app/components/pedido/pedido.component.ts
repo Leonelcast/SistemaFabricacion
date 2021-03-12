@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../../services/pedido.service';
+import { DispositivoService } from '../../services/dispositivo.service';
 import { NgForm } from '@angular/forms';
 import { Pedidos } from '../../models/pedido'
+
 
 
 
@@ -13,7 +15,7 @@ import { Pedidos } from '../../models/pedido'
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(public pedidoService: PedidoService){}
+  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService){}
   ngOnInit(): void {
     this.getPedidos();
   }
@@ -30,7 +32,15 @@ export class PedidoComponent implements OnInit {
    }
    
  
- 
+   getDispositivos() {
+    this.dispositivoService.getDispositivos().subscribe(
+      res => {
+        this.dispositivoService.dispositivos = res;
+      },
+      err => console.error(err)
+    );
+
+  }
  
    getPedidos() {
      this.pedidoService.getPedidos().subscribe(

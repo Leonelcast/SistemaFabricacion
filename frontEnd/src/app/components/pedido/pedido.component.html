@@ -22,6 +22,13 @@
                         <input type="date" class="form-control" placeholder="Serie" name="numeroSerie"
                             [(ngModel)]="pedidoService.selectedPedido.fecha_e">
                     </div>
+                    <div class="form-group">
+                        <select [(ngModel)]="dispositivoService.selectedDispositivo">
+                            <option *ngFor="let dispositivo of dispositivoService.dispositivos"
+                                value="{{dispositivo.marca}}">
+                                </option>
+                                </select>
+                    </div>
                    
                     <button class="btn btn-secondary">Save</button>
                 </form>

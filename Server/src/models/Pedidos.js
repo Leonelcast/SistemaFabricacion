@@ -6,12 +6,10 @@ const pedidoSchema = new Schema({
     fecha_p: {type: Date, require: true},
     fecha_e: {type: Date, require: true},
     dispositivo:{
-        type: Schema.Types.ObjectId,
-        ref: 'Dispositivos'
+        type: String, require: true
     },
     user:{
-        type: Schema.Types.ObjectId,
-        ref: 'Users'
+        type: String, require: true
     }
 
 

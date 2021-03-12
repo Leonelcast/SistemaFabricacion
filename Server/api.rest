@@ -27,7 +27,7 @@ DELETE http://localhost:5000/api/users/60441c9a38ab18207cc23d86
 
 
 ###
-PUT http://localhost:5000/api/dispositivos/60122dc3d2e3e11640fa06ee
+PUT http://localhost:5000/api/dispositivos/604a567dc6a7b81680bc2df1
 Content-Type: application/json
 
 {

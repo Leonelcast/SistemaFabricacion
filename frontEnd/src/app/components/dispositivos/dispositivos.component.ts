@@ -3,6 +3,7 @@ import { DispositivoService } from '../../services/dispositivo.service';
 import { NgForm } from '@angular/forms';
 import { Dispositivo } from '../../models/dispositivos'
 
+
 @Component({
   selector: 'app-dispositivos',
   templateUrl: './dispositivos.component.html',
@@ -27,6 +28,7 @@ export class DispositivosComponent implements OnInit {
       err => console.error(err)
     )
    }else{
+    
     this.dispositivoService.createDispositivo(form.value).subscribe(
       res => {
         this.getDispositivos();
@@ -35,6 +37,7 @@ export class DispositivosComponent implements OnInit {
     )
    }
   }
+  
   
 
 
