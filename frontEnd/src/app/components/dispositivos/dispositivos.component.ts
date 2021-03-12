@@ -7,7 +7,7 @@ import { Dispositivo } from '../../models/dispositivos'
   selector: 'app-dispositivos',
   templateUrl: './dispositivos.component.html',
   styleUrls: ['./dispositivos.component.css']
-  
+
 })
 export class DispositivosComponent implements OnInit {
 
@@ -19,24 +19,36 @@ export class DispositivosComponent implements OnInit {
   }
 
   addDispositivo(form: NgForm) {
-   if(form.value._id){
-     this.dispositivoService.putDispositivo(form.value).subscribe(
-      res => {
-        this.getDispositivos();
-      },
-      err => console.error(err)
-    )
-   }else{
+
     this.dispositivoService.createDispositivo(form.value).subscribe(
       res => {
         this.getDispositivos();
       },
       err => console.error(err)
     )
-   }
-  }
-  
 
+  }
+
+  updateDispositivos(form: NgForm) {
+    if (form.value._id) {
+      this.dispositivoService.putDispositivo(form.value).subscribe(
+        res => {
+          this.getDispositivos();
+        },
+        err => console.error(err)
+      )
+    }
+    else {
+      this.dispositivoService.createDispositivo(form.value).subscribe(
+        res => {
+          this.getDispositivos();
+        },
+        err => console.error(err)
+
+      )
+    }
+
+  }
 
 
   getDispositivos() {
