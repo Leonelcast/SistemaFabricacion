@@ -17,9 +17,9 @@ pedidosController.createPedido = async  (req, res) => {
 }
 
 pedidosController.getPedido = async (req, res) => {
-   const pedido = await Pedidos.findById(req.params.id)
-    res.send(pedido)
-}
+    const pedido = await Pedidos.findById(req.params.id).populate('dispositivo');
+     res.send(pedido)
+ }
 //UPDATE
 pedidosController.updatePedido = async (req, res) => {
     await Pedidos.findByIdAndUpdate(req.params.id, req.body)
