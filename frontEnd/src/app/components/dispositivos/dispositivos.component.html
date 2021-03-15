@@ -1,50 +1,58 @@
-<div class="row">
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-
-                <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
-                    <div class="form-group">
-                        <input type="text" name="_id"
-                        [(ngModel)]="dispositivoService.selectedDispositivo._id">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder=" Marca" name="marca"
-                        [(ngModel)]="dispositivoService.selectedDispositivo.marca">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Memoria" name="memoria"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Modelo" name="modelo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Serie" name="numeroSerie"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.numeroSerie">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Procesador" name="procesador"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Resolucion" name="resolucion"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.resolucion">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Tipo" name="tipo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.tipo">
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Precio" name="precio"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.precio">
-                    </div>
-                    <button class="btn btn-secondary">Save</button>
-                </form>
-
-
+<div class="row"> 
+    <div class="col-md-1">
+            <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Insertar
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder=" Marca" name="marca"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Memoria" name="memoria"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Modelo" name="modelo"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Serie" name="numeroSerie"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.numeroSerie">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Procesador" name="procesador"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Resolucion" name="resolucion"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.resolucion">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Tipo" name="tipo"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.tipo">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Precio" name="precio"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.precio">
+                        </div>
+                        <button class="btn btn-secondary">Save</button>
+                    </form>
+                </div>
+              </div>
             </div>
           </div>
       
