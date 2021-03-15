@@ -1,8 +1,8 @@
 ###
-GET     http://localhost:5000/api/pedidos
+GET     http://localhost:5000/api/dispositivos
 
 ###
-GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1
+DELETE  http://localhost:5000/api/pedidos/604fd91f598e1e4ad40189c2
 
 ###
 POST http://localhost:5000/api/dispositivos

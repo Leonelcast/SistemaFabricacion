@@ -4,30 +4,38 @@
             <div class="card-body">
 
                 <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
-                 
+                    <label>Cliente</label>
+                    <select [(ngModel)]="pedidoService.selectedPedido.user"  name="user" class="form-control">
+                        <option *ngFor="let user of authService.user" value="{{user._id}}">{{user.nombre}}
+                            </option>
+                            </select>
                     
                     <div class="form-group">
+                        <label>Cantidad</label>
                         <input type="text" class="form-control" placeholder=" Cantidad" name="cantidad"
                             [(ngModel)]="pedidoService.selectedPedido.cantidad">
                     </div>
                     <div class="form-group">
+                        <label>Total</label>
                         <input type="text" class="form-control" placeholder="Total" name="total"
                             [(ngModel)]="pedidoService.selectedPedido.total">
                     </div>
                     <div class="form-group">
+                        <label>Fecha del pedido</label>
                         <input type="date" class="form-control" placeholder="Fecha del pedido" name="fecha_p"
                             [(ngModel)]="pedidoService.selectedPedido.fecha_p">
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control" placeholder="Fecha de entrega" name="fecha_e"
+                        <label>Fecha de entrega</label>
+                         <input type="date" class="form-control" placeholder="Fecha de entrega" name="fecha_e"
                             [(ngModel)]="pedidoService.selectedPedido.fecha_e">
                     </div>
-                    <select  >
-                        <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="pedido.dispositivo" >{{dispositivo.modelo}}
+                    <label>Dispositivo</label>
+                    <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control">
+                        <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}">{{dispositivo.modelo}}
                             </option>
                             </select>
-               
-                   
+                            <br>
                     <button class="btn btn-secondary">Save</button>
                 </form>
 
@@ -42,7 +50,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h2>DISPOSITIVOS</h2>
+                                <h2>PEDIDOS</h2>
                             </div>
 
                         </div>
@@ -55,7 +63,7 @@
                                 <th>FECHA DEL PEDIDO</th>
                                 <th>FECHA ENTREGA</th>
                                 <th>DISPOSITIVO</th>
-                                
+                                <th>CLIENTE</th>
                                 <th>ELIMINAR</th>
                             </tr>
                         </thead>
@@ -66,10 +74,11 @@
                                 <td>{{pedido.fecha_p}}</td>
                                 <td>{{pedido.fecha_e}}</td>
                                 <td>{{pedido.dispositivo}}</td>
+                                <td>{{pedido.user}}</td>
                                
                                 <td>
                                    
-                                    <button class="btn btn-danger bt-sm">
+                                    <button class="btn btn-danger bt-sm" (click)="deletePedido(pedido._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>
                                 </td>

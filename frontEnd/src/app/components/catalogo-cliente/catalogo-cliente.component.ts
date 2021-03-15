@@ -23,5 +23,16 @@ export class CatalogoClienteComponent implements OnInit {
       err => console.error(err)
     );
   }
+  deleteUser(id: string) {
+    if (confirm('¿estas seguro de que lo quieres eliminar?')) {
+      this.authService.deleteUser(id).subscribe(
+        (res) => {
+          this.getUser();
+        },
+        (err) => console.error(err)
+      );
+    }
+
+  }
 
 }

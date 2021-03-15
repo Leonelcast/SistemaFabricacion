@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../../services/pedido.service';
 import { DispositivoService } from '../../services/dispositivo.service';
+import {AuthService} from '../../services/auth.service'
 import { NgForm } from '@angular/forms';
 import { Pedidos } from '../../models/pedido'
 
@@ -15,10 +16,11 @@ import { Pedidos } from '../../models/pedido'
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService){}
+  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService, public authService: AuthService){}
   ngOnInit(): void {
     this.getPedidos();
     this.getDispositivos();
+    this.getUser();
   }
 
   addPedido(form: NgForm) {
@@ -37,6 +39,16 @@ export class PedidoComponent implements OnInit {
     this.dispositivoService.getDispositivos().subscribe(
       res => {
         this.dispositivoService.dispositivos = res;
+      },
+      err => console.error(err)
+    );
+
+  }
+
+  getUser() {
+    this.authService.getUser().subscribe(
+      res => {
+        this.authService.user = res;
       },
       err => console.error(err)
     );
