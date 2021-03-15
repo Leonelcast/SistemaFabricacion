@@ -46,9 +46,10 @@
 
 
             </div>
-        </div>
+          </div>
+      
     </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
 
         <div class="container-lg">
                 <div class="table-wrapper">
@@ -85,9 +86,67 @@
                                 <td>{{dispositivo.tipo}}</td>
                                 <td>{{dispositivo.precio}}</td>
                                 <td>
-                                    <button class="btn btn-primary bt-sm" (click)="editDipositivo(dispositivo)">
-                                        <i class="material-icons">edit</i>
-                                    </button>
+                                      
+                                     <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" (click)="editDipositivo(dispositivo)">
+            <i class="material-icons">edit</i>
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <form #updateForm="ngForm" (ngSubmit)="updateDispositivo(updateForm)">
+                        <div class="form-group">
+                            <input type="hidden" name="_id"
+                            [(ngModel)]="dispositivoService.selectedDispositivo._id">
+                        </div>  
+                        <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Marca" name="marca"
+                              [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Memoria" name="memoria"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Modelo" name="modelo"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Serie" name="numeroSerie"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.numeroSerie">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Procesador" name="procesador"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Resolucion" name="resolucion"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.resolucion">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Tipo" name="tipo"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.tipo">
+                          </div>
+                          <div class="form-group">
+                              <input type="number" class="form-control" placeholder="Precio" name="precio"
+                                  [(ngModel)]="dispositivoService.selectedDispositivo.precio">
+                          </div>
+                         
+                          <button class="btn btn-secondary" >Save</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
                                     <button class="btn btn-danger bt-sm" (click)="deleteDispositivo(dispositivo._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>
