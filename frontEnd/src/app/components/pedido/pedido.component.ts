@@ -18,6 +18,7 @@ export class PedidoComponent implements OnInit {
   constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService){}
   ngOnInit(): void {
     this.getPedidos();
+    this.getDispositivos();
   }
 
   addPedido(form: NgForm) {
