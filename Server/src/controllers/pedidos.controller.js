@@ -1,6 +1,7 @@
 const pedidosController = {}
 
 const Pedidos = require('../models/Pedidos')
+const Dispositivos = require('../models/Dispositivos')
 
 
 pedidosController.getPedidos = async (req, res) => {
@@ -17,7 +18,7 @@ pedidosController.createPedido = async  (req, res) => {
 }
 
 pedidosController.getPedido = async (req, res) => {
-   const pedido = await Pedidos.findById(req.params.id)
+   const pedido = await Pedidos.findById(req.params.id).populate('dispositivo');
     res.send(pedido)
 }
 //UPDATE
@@ -28,9 +29,11 @@ pedidosController.updatePedido = async (req, res) => {
 
 //DELETE
 pedidosController.deletePedido = async (req, res) => {
-   await Pedido.findByIdAndDelete(req.params.id)
+   await Pedidos.findByIdAndDelete(req.params.id)
     res.json({status: 'Pedido eliminado'})
 
 }
+
+
 
 module.exports = pedidosController;

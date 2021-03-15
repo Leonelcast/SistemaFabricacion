@@ -5,7 +5,7 @@
 
                 <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
                     <div class="form-group">
-                        <input type="hidden" name="_id"
+                        <input type="text" name="_id"
                         [(ngModel)]="dispositivoService.selectedDispositivo._id">
                     </div>
                     
@@ -85,15 +85,9 @@
                                 <td>{{dispositivo.tipo}}</td>
                                 <td>{{dispositivo.precio}}</td>
                                 <td>
-<<<<<<< HEAD
-                                   
-                                            <button (click)="editDipositivo(dispositivo)" class="btn btn-secondary btn-sm">
-                                            <i class="material-icons">edit</i></button>
-=======
                                     <button class="btn btn-primary bt-sm" (click)="editDipositivo(dispositivo)">
                                         <i class="material-icons">edit</i>
                                     </button>
->>>>>>> eve
                                     <button class="btn btn-danger bt-sm" (click)="deleteDispositivo(dispositivo._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>

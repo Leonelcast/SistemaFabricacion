@@ -6,16 +6,12 @@ const pedidoSchema = new Schema({
     fecha_p: {type: Date, require: true},
     fecha_e: {type: Date, require: true},
     dispositivo:{
-        type: String, require: true
+        type: Schema.Types.ObjectId,
+        ref: 'Dispositivos'
     },
     user:{
-        type: String, require: true
+        type: Schema.Types.ObjectId,
+        ref: 'Users'
     }
-
-
-},{
-    timestamps:true, 
-    versionKey:false
 });
 module.exports = model("Pedido", pedidoSchema);
-
