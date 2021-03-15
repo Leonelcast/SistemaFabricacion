@@ -23,14 +23,6 @@
                             [(ngModel)]="pedidoService.selectedPedido.fecha_e">
                     </div>
                    
-                    <div class="form-group">
-                        <select>
-                            <option 
-                            >
-                                </option>
-                                </select>
-                    </div>
-                   
                     <button class="btn btn-secondary">Save</button>
                 </form>
 
@@ -57,18 +49,20 @@
                                 <th>MEMORIA</th>
                                 <th>MODELO</th>
                                 <th>NUMERO DE SERIE</th>
-                                <th>dis</th>
+                                <th>NUMERO DE SERIE</th>
+                                <th>NUMERO DE SERIE</th>
                                 
                                 <th>EDITAR/ELIMINAR</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr >
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <tr *ngFor="let pedido of pedidoService.pedido">
+                                <td>{{pedido.cantidad}}</td>
+                                <td>{{pedido.total}}  </td>
+                                <td>{{pedido.fecha_p}}</td>
+                                <td>{{pedido.fecha_e}}</td>
+                                <td>{{pedido.dispositivo}}</td>
+                                <td>{{pedido.user}}</td>
                                
                                 <td>
                                    

@@ -27,7 +27,7 @@ export class DispositivosComponent implements OnInit {
       },
       err => console.error(err)
     )
-  
+    location.reload();
   }
   
   
@@ -40,6 +40,7 @@ updateDispositivo(form: NgForm){
      err => console.error(err)
    )
   }
+  location.reload();
 }
 
 
