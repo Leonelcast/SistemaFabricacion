@@ -8,20 +8,26 @@ import {User} from '../models/user';
 })
 export class AuthService {
   private URL = 'http://localhost:5000/api'
+  selectedUser: User={
+    _id:'',
+    nombre:'',
+    email:'',
+    roles:''
+  };
 
   constructor(
     private http: HttpClient,
     private router: Router) { }
     
+    
     URL_API = 'http://localhost:5000/api/users';
-    selectedUser: User={
-      _id:'',
-      nombre:'',
-      email:'',
-      roles:''
-    };
-   user: User[] = [];
-
+    user: User[] = [];
+    
+  
+   
+   deleteUser(_id: string){
+    return this.http.delete(`${this.URL_API}/${_id}`)
+  }
   signUp(user:any){
    return this.http.post<any>(this.URL + '/users', user);
   }
@@ -33,6 +39,7 @@ export class AuthService {
    loggedIn() {
      return !!localStorage.getItem('token')
    }
+
 
   
 
@@ -46,9 +53,7 @@ export class AuthService {
   }
 
   rol(){
-    return// this.http.(this.URL_API);
+    return localStorage.getItem
    }
-   deleteUser(_id: string){
-    return this.http.delete(`${this.URL_API}/${_id}`)
-  }
+ 
 }

@@ -1,8 +1,8 @@
 ###
-GET     http://localhost:5000/api/dispositivos
+GET     http://localhost:5000/api/pedidos
 
 ###
-DELETE  http://localhost:5000/api/pedidos/604fd91f598e1e4ad40189c2
+GET  http://localhost:5000/api/pedidos/604fef2a8cc82f21e0447582
 
 ###
 POST http://localhost:5000/api/dispositivos
@@ -58,8 +58,8 @@ POST http://localhost:5000/api/users/signIn
 Content-Type: application/json
 
 {
-    "email": "LeonelCI@gmail.com",
-    "password":"qwer"
+    "email": "tigo@gmail.com",
+    "password":"hola"
 }
 
 
@@ -68,10 +68,9 @@ POST http://localhost:5000/api/pedidos
 Content-Type: application/json
 
 {
-"cantidad": 6, 
-"total": 458, 
-"fecha_p": "03-10-2021", 
+"cantidad": 3, 
+"total": 66, 
 "fecha_e": "03-15-2021", 
 "dispositivo": "6046a9ed5181b70314f6d352", 
-"user": "60497a8ae2b1596118284fd4"
+"user": "6051275743184f0670f336ab"
 }

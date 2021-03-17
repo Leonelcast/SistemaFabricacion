@@ -10,6 +10,7 @@ import{SignupComponent} from './components/signup/signup.component'
 import{CatalogoClienteComponent} from './components/catalogo-cliente/catalogo-cliente.component'
 import{DispositivosComponent} from './components/dispositivos/dispositivos.component'
 import{PedidoComponent} from './components/pedido/pedido.component'
+import{AdminPedidosComponent} from './components/admin-pedidos/admin-pedidos.component'
 
 
 
@@ -35,6 +36,11 @@ const routes: Routes = [
   {
     path: 'pedidos',
     component:PedidoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'pedidosAdmin',
+    component:AdminPedidosComponent,
     canActivate: [AuthGuard]
   }
 ];

@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt')
 
 
 usersController.getUsers = async (req, res) => {
-    const users = await Users.find()
+    const users = await Users.find().populate('roles')
     res.json(users)
 }
 //CREATE
@@ -37,7 +37,7 @@ usersController.SingIn = async (req, res) => {
 }
 
 usersController.getRol = async (req, res) => {
-    const users = await Users.findById(req.params.roles)
+    const users = await Users.findOne({roles})
     res.json(users)
 }
 
