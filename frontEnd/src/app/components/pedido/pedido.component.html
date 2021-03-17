@@ -9,29 +9,19 @@
                         <option *ngFor="let user of authService.user" value="{{user._id}}">{{user.nombre}}
                             </option>
                             </select>
+                            <label>Dispositivo</label>
+                            <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control">
+                                <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}">{{dispositivo.modelo}}
+                                    </option>
+                                    </select>
+                                    <br>
                     
                     <div class="form-group">
                         <label>Cantidad</label>
                         <input type="text" class="form-control" placeholder=" Cantidad" name="cantidad"
                             [(ngModel)]="pedidoService.selectedPedido.cantidad">
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Fecha del pedido</label>
-                        <input type="date" class="form-control" placeholder="Fecha del pedido" name="fecha_p"
-                            [(ngModel)]="pedidoService.selectedPedido.fecha_p">
-                    </div>
-                    <div class="form-group">
-                        <label>Fecha de entrega</label>
-                         <input type="date" class="form-control" placeholder="Fecha de entrega" name="fecha_e"
-                            [(ngModel)]="pedidoService.selectedPedido.fecha_e">
-                    </div>
-                    <label>Dispositivo</label>
-                    <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control">
-                        <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}">{{dispositivo.modelo}}
-                            </option>
-                            </select>
-                            <br>
+                 
                     <button class="btn btn-secondary">Save</button>
                 </form>
 
@@ -60,18 +50,19 @@
                                 <th>FECHA ENTREGA</th>
                                 <th>DISPOSITIVO</th>
                                 <th>CLIENTE</th>
+                                <th>ESTADO</th>
                                 <th>ELIMINAR</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
                             <tr *ngFor="let pedido of pedidoService.pedido">
                                 <td>{{pedido.cantidad}}</td>
-                                <td>{{pedido.dispositivo.precio *pedido.cantidad}}</td>
+                                <td>{{pedido.dispositivo.precio*pedido.cantidad}}</td>
                                 <td>{{pedido.fecha_p}}</td>
                                 <td>{{pedido.fecha_e}}</td>
-                                <td>{{pedido.dispositivo.modelo}}</td>
+                                <td >{{pedido.dispositivo.modelo}}</td>
                                 <td>{{pedido.user.nombre}}</td>
+                                <td>{{pedido.estado}}</td>
                                
                                 <td>
                                    
@@ -79,8 +70,10 @@
                                         <i class="material-icons">delete_forever</i>
                                     </button>
                                 </td>
+
+
+
                             </tr>
-                            
 
                         </tbody>
                     </table>

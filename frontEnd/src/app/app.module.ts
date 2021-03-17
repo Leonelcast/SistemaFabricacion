@@ -10,7 +10,7 @@ import { CatalogoClienteComponent } from './components/catalogo-cliente/catalogo
 import { AppRoutingModule } from './app-routing.module';
 import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
-
+import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { PedidoComponent } from './components/pedido/pedido.component';
     SignupComponent,
     SigninComponent,
     CatalogoClienteComponent,
-    PedidoComponent
+    PedidoComponent,
+    AdminPedidosComponent
   ],
   imports: [
     BrowserModule,

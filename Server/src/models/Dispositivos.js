@@ -9,8 +9,5 @@ memoria: {type: String, require: true},
 procesador: {type: String, require: true},
 resolucion:{type: String, require: true},
 precio:{type: Number, require: true},
-},{
-    timestamps:true, 
-    versionKey:false
 });
 module.exports = model("Dispositivos", dispositivoSchema);

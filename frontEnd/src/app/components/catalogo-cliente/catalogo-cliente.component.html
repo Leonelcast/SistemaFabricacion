@@ -23,6 +23,10 @@
                                 <td>{{user.nombre}}</td>
                                 <td>{{user.email}}</td>
                                 <td>
+                                   
+                                    <button class="btn btn-danger bt-sm" (click)="deleteUser(user._id)">
+                                        <i class="material-icons">delete_forever</i>
+                                    </button>
                                 </td>
                             </tr>
 

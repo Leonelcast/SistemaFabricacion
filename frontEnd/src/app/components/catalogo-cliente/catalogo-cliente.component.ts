@@ -34,4 +34,5 @@ export class CatalogoClienteComponent implements OnInit {
     }
 
   }
+
 }

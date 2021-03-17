@@ -8,6 +8,7 @@ export interface Pedidos {
     fecha_e: Date,
     dispositivo: Dispositivo | null,
     user: User | null,
+    estado: string,
     updatedAt?: string,
     _id: string
     }
