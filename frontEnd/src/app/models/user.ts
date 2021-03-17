@@ -4,5 +4,5 @@ export interface User {
     nombre: string,
     email: string,
     updatedAt?: string,
-    _id?: string
+    _id: string
     }

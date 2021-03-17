@@ -3,6 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import{ Pedidos} from '../models/pedido';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,8 +17,8 @@ export class PedidoService {
     total: 0,
     fecha_p: new Date(),
     fecha_e: new Date(),
-    dispositivo:'',
-    user:''
+    dispositivo: null,
+    user: null
 
   };
 
