@@ -8,11 +8,26 @@ import {User} from '../models/user';
 })
 export class AuthService {
   private URL = 'http://localhost:5000/api'
+  selectedUser: User={
+    _id:'',
+    nombre:'',
+    email:'',
+    roles:''
+  };
 
   constructor(
     private http: HttpClient,
     private router: Router) { }
-
+    
+    
+    URL_API = 'http://localhost:5000/api/users';
+    user: User[] = [];
+    
+  
+   
+   deleteUser(_id: string){
+    return this.http.delete(`${this.URL_API}/${_id}`)
+  }
   signUp(user:any){
    return this.http.post<any>(this.URL + '/users', user);
   }
@@ -32,14 +47,6 @@ export class AuthService {
      this.router.navigate(['/signIn'])
    }
 
-   URL_API = 'http://localhost:5000/api/users';
-  selectedUser: User={
-    roles:"",
-    _id:"",
-    nombre:"",
-    email:""
-  };
-  user: User[] = [];
   getUser(){
     return this.http.get<User[]>(this.URL_API);
   }

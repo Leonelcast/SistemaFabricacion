@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
 import{ Pedidos} from '../models/pedido';
+import {Dispositivo} from '../models/dispositivos';
 
 
 @Injectable({
@@ -13,11 +14,12 @@ export class PedidoService {
   selectedPedido: Pedidos ={
     _id: '',
     cantidad: 0,
-    total: 0,
+    total:0,
     fecha_p: new Date(),
     fecha_e: new Date(),
-    dispositivo:'',
-    user:''
+    dispositivo:null,
+    user:null,
+    estado:''
 
   };
 

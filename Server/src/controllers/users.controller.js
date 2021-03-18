@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt')
 
 
 usersController.getUsers = async (req, res) => {
-    const users = await Users.find()
+    const users = await Users.find().populate('roles')
     res.json(users)
 }
 //CREATE

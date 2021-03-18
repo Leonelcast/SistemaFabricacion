@@ -1,0 +1,79 @@
+<div class="container-lg">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>PEDIDOS</h2>
+                </div>
+
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CANTIDAD</th>
+                    <th>TOTAL</th>
+                    <th>FECHA DEL PEDIDO</th>
+                    <th>FECHA ENTREGA</th>
+                    <th>DISPOSITIVO</th>
+                    <th>CLIENTE</th>
+                    <th>Estado</th>
+                    <th>AGREGAR FECHA ESTIMADA</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pedido of pedidoService.pedido">
+                    <td>{{pedido.cantidad}}</td>
+                    <td>{{pedido.dispositivo.precio *pedido.cantidad}}</td>
+                    <td>{{pedido.fecha_p}}</td>
+                    <td>{{pedido.fecha_e}}</td>
+                    <td>{{pedido.dispositivo.modelo}}</td>
+                    <td>{{pedido.user.nombre}}</td>
+                    <td>{{pedido.estado}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" (click)="editDate(pedido)">
+                            <i class="material-icons">edit</i>
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <form #updateForm="ngForm" (ngSubmit)="updatePedido(updateForm)">
+                                        <div class="form-group">
+                                            <input type="text" name="_id"
+                                            [(ngModel)]="pedidoService.selectedPedido._id">
+                                        </div>  
+                                        <div class="form-group">
+                                            <label>Fecha de entrega</label>
+                                            <input type="date" class="form-control"  name="fecha_e"
+                                                [(ngModel)]="pedidoService.selectedPedido.fecha_e">
+                                        </div>
+                                            <select [(ngModel)]="pedidoService.selectedPedido.estado" name="estado" class="form-control">
+                                                
+                                                <option  value="Empacando"> Empacando</option>
+                                                <option  value="ruta"> En ruta</option>
+                                                <option  value="Entregado"> Entregado</option>
+                                            </select>
+                                         
+                                          <button class="btn btn-secondary" >Save</button>
+                                      </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
