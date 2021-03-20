@@ -57,11 +57,11 @@
                         <tbody>
                             <tr *ngFor="let pedido of pedidoService.pedido">
                                 <td>{{pedido.cantidad}}</td>
-                                <td>{{pedido.dispositivo.precio*pedido.cantidad}}</td>
+                                <td>{{pedido.dispositivo.precio * pedido.cantidad}}</td>
                                 <td>{{pedido.fecha_p}}</td>
                                 <td>{{pedido.fecha_e}}</td>
-                                <td >{{pedido.dispositivo.modelo}}</td>
-                                <td>{{pedido.user.nombre}}</td>
+                                <td >{{pedido?.dispositivo?.modelo}}</td>
+                                <td>{{pedido?.user?.nombre}}</td>
                                 <td>{{pedido.estado}}</td>
                                
                                 <td>
