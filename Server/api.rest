@@ -1,5 +1,7 @@
 ### 
 GET http://localhost:5000/api/pedidos
+### 
+GET http://localhost:5000/api/Sventas/intento
 
 ### 
 GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352
