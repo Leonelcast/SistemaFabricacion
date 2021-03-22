@@ -11,6 +11,8 @@ import{CatalogoClienteComponent} from './components/catalogo-cliente/catalogo-cl
 import{DispositivosComponent} from './components/dispositivos/dispositivos.component'
 import{PedidoComponent} from './components/pedido/pedido.component'
 import{AdminPedidosComponent} from './components/admin-pedidos/admin-pedidos.component'
+import{PruebaComponent} from './components/prueba/prueba.component'
+
 
 
 
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path: 'signUp',
     component:SignupComponent
+  },
+  {
+    path: 'prueba',
+    component:PruebaComponent
   },
   {
     path: 'catalogoCliente',
@@ -43,6 +49,7 @@ const routes: Routes = [
     component:AdminPedidosComponent,
     canActivate: [AuthGuard]
   }
+
 ];
 
 @NgModule({

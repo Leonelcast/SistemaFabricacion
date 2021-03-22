@@ -15,10 +15,11 @@ export class PedidoService {
     _id: '',
     cantidad: 0,
     total:0,
-    fecha_p: new Date(),
-    fecha_e: new Date(),
+    fecha_p: '',
+    fecha_e: '',
     dispositivo:null,
-    user:null
+    user:null,
+    estado:''
 
   };
 

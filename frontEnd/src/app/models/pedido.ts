@@ -4,10 +4,11 @@ export interface Pedidos {
     createdAt?: string,
     cantidad: number,
     total: number,
-    fecha_p: Date,
-    fecha_e: Date,
-    dispositivo: Dispositivo| null,
-    user: User| null ,
+    fecha_p: string,
+    fecha_e: string,
+    dispositivo: Dispositivo | null,
+    user: User | null,
+    estado: string,
     updatedAt?: string,
     _id: string
     }

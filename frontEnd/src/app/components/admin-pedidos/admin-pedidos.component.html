@@ -17,6 +17,7 @@
                     <th>FECHA ENTREGA</th>
                     <th>DISPOSITIVO</th>
                     <th>CLIENTE</th>
+                    <th>Estado</th>
                     <th>AGREGAR FECHA ESTIMADA</th>
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                     <td>{{pedido.fecha_e}}</td>
                     <td>{{pedido.dispositivo.modelo}}</td>
                     <td>{{pedido.user.nombre}}</td>
+                    <td>{{pedido.estado}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" (click)="editDate(pedido)">
                             <i class="material-icons">edit</i>
@@ -54,6 +56,12 @@
                                             <input type="date" class="form-control"  name="fecha_e"
                                                 [(ngModel)]="pedidoService.selectedPedido.fecha_e">
                                         </div>
+                                            <select [(ngModel)]="pedidoService.selectedPedido.estado" name="estado" class="form-control">
+                                                
+                                                <option  value="Empacando"> Empacando</option>
+                                                <option  value="ruta"> En ruta</option>
+                                                <option  value="Entregado"> Entregado</option>
+                                            </select>
                                          
                                           <button class="btn btn-secondary" >Save</button>
                                       </form>
