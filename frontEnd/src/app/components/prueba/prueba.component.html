@@ -5,7 +5,7 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-8">
-                                <h2>Clientes</h2>
+                                <h2>SISTEMA DE VENTAS</h2>
                             </div>
 
                         </div>
@@ -13,14 +13,22 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>COTENIDO</th>
+                                <th>MARCA</th>
+                                <th>NOMBRE DISPOSITIVO</th>
+                                <th>DESCRIPCION</th>
+                                <th>EXISTENCIA</th>
+                                <th>COLOR</th>
+                                <th>PRECIO</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let prueba of pruebaService.prueba">
-                                <td>{{prueba._id}}</td>
-                                <td>{{prueba.content}}</td>
+                                <td>{{prueba.nombre_marca}}</td>
+                                <td>{{prueba.nombret}}</td>
+                                <td>{{prueba.descripcion}}</td>
+                                <td>{{prueba.existencia}}</td>
+                                <td>{{prueba.color}}</td>
+                                <td>{{prueba.precio_lista}}</td>
 
                             </tr>
 
