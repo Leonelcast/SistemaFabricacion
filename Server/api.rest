@@ -7,8 +7,13 @@ GET  http://localhost:5000/api/users
 
 ### 
 GET http://localhost:5000/api/pedidos
+<<<<<<< HEAD
 >>>>>>> 195fa3d60a29ed401de4cacdab22413cb9010605
 >>>>>>> eve
+=======
+### 
+GET http://localhost:5000/api/Sventas/intento
+>>>>>>> origin/eve
 
 ### 
 GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352

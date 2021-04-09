@@ -23,7 +23,8 @@ const routes: Routes = [
   },
   {
     path: 'signUp',
-    component:SignupComponent
+    component:SignupComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'prueba',
@@ -48,6 +49,10 @@ const routes: Routes = [
     path: 'pedidosAdmin',
     component:AdminPedidosComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'prueba',
+    component:PruebaComponent
   }
 
 ];
