@@ -7,7 +7,12 @@ GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1
 =======
 ### 
 GET http://localhost:5000/api/pedidos
+<<<<<<< HEAD
 >>>>>>> 195fa3d60a29ed401de4cacdab22413cb9010605
+=======
+### 
+GET http://localhost:5000/api/Sventas/intento
+>>>>>>> 21a7f5b1a2c6b50e5970d3e296fbb04c1f0b2dd0
 
 ### 
 GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352

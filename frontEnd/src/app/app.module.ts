@@ -10,7 +10,8 @@ import { CatalogoClienteComponent } from './components/catalogo-cliente/catalogo
 import { AppRoutingModule } from './app-routing.module';
 import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
-import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component'
+import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
+import { PruebaComponent } from './components/prueba/prueba.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.
     SigninComponent,
     CatalogoClienteComponent,
     PedidoComponent,
-    AdminPedidosComponent
+    AdminPedidosComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
