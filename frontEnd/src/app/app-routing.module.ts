@@ -22,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'signUp',
-    component:SignupComponent
+    component:SignupComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'catalogoCliente',

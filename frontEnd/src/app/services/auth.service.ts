@@ -28,6 +28,10 @@ export class AuthService {
    deleteUser(_id: string){
     return this.http.delete(`${this.URL_API}/${_id}`)
   }
+  putUser(user: User){
+    return this.http.put(`${this.URL_API}/${user._id}`, user);
+
+  }
   signUp(user:any){
    return this.http.post<any>(this.URL + '/users', user);
   }
