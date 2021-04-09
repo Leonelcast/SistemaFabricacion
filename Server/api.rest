@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 ###
-GET     http://localhost:8081/api/greeting
+GET     http://localhost:8081/data
 
 ###
 GET  http://localhost:5000/api/users
