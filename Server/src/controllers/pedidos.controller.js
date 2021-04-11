@@ -14,7 +14,6 @@ pedidosController.createPedido = async  (req, res) => {
     const newPedido = new Pedidos(req.body)
     await newPedido.save()
     console.log(req.body)
-
     res.json('pedido creado')
 }
 
@@ -30,8 +29,8 @@ pedidosController.updatePedido = async (req, res) => {
 
 //DELETE
 pedidosController.deletePedido = async (req, res) => {
-   await Pedidos.findByIdAndDelete(req.params.id)
-    res.json({status: 'Pedido eliminado'})
+    await Pedidos.findByIdAndDelete(req.params.id)
+   res.json({status: 'Pedido eliminado'})
 
 }
 

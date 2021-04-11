@@ -1,4 +1,3 @@
-  
 const historialController = {}
 
 const Historial = require('../models/Historial')

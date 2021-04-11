@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ClientesService } from '../../services/clientes.service';
 import { NgForm } from '@angular/forms';
 import { Cliente } from '../../models/cliente'
+
 
 @Component({
   selector: 'app-clientes',
@@ -9,6 +11,7 @@ import { Cliente } from '../../models/cliente'
   styleUrls: ['./clientes.component.css']
 })
 export class ClientesComponent implements OnInit {
+
 
   constructor(public clientesService: ClientesService) { }
 
@@ -65,5 +68,6 @@ export class ClientesComponent implements OnInit {
 
 
  
+
 
 }

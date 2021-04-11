@@ -18,37 +18,50 @@
                 <div class="modal-body">
                     <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder=" Marca" name="marca"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                            <input type="text" class="form-control" placeholder="Color" name="color"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.color">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Memoria" name="memoria"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
+                            <input type="text" class="form-control" placeholder="Descripcion" name="descripcion"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Modelo" name="modelo"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                            <input type="text" class="form-control" placeholder=" Modelo" name="modelo"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Serie" name="numeroSerie"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.numeroSerie">
+                            <input type="text" class="form-control" placeholder="Codigo_modelo" name="codigo_modelo"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Procesador" name="procesador"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Resolucion" name="resolucion"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.resolucion">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Tipo" name="tipo"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.tipo">
+                            <input type="number" class="form-control" placeholder="Existencia" name="existencia"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
                         </div>
                         <div class="form-group">
                             <input type="number" class="form-control" placeholder="Precio" name="precio"
                                 [(ngModel)]="dispositivoService.selectedDispositivo.precio">
                         </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Ram" name="ram"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.ram">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Almacenamiento" name="almacenamiento"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
+                        </div>
+                        <div class="form-group">
+                            <input type="string" class="form-control" placeholder="Procesador" name="procesador"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Numero_Cores" name="numero_cores"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
+                        </div>
+                        <div class="form-group">
+                              <input type="text" class="form-control" placeholder=" Marca" name="marca"
+                              [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                          </div>
+                         
                         <button class="btn btn-secondary">Save</button>
                     </form>
                 </div>
@@ -72,27 +85,33 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>MARCA</th>
-                                <th>MEMORIA</th>
+                                <th>COLOR</th>
+                                <th>DESCRIPCION</th>
                                 <th>MODELO</th>
-                                <th>NUMERO DE SERIE</th>
-                                <th>PROCESADOR</th>
-                                <th>RESOLUCION</th>
-                                <th>TIPO</th>
+                                <th>CODIGO MODELO</th>
+                                <th>EXISTENCIA</th>
                                 <th>PRECIO</th>
+                                <th>RAM</th>
+                                <th>ALMACENAMIENTO</th>
+                                <th>PROCESADOR</th>
+                                <th>NUMERO DE CORES</th>
+                                <th>MARCA</th>
                                 <th>EDITAR/ELIMINAR</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let dispositivo of dispositivoService.dispositivos">
-                                <td>{{dispositivo.marca}}</td>
-                                <td>{{dispositivo.memoria}}</td>
+                                <td>{{dispositivo.color}}</td>
+                                <td>{{dispositivo.descripcion}}</td>
                                 <td>{{dispositivo.modelo}}</td>
-                                <td>{{dispositivo.numeroSerie}}</td>
-                                <td>{{dispositivo.procesador}}</td>
-                                <td>{{dispositivo.resolucion}}</td>
-                                <td>{{dispositivo.tipo}}</td>
+                                <td>{{dispositivo.codigo_modelo}}</td>
+                                <td>{{dispositivo.existencia}}</td>
                                 <td>{{dispositivo.precio}}</td>
+                                <td>{{dispositivo.ram}}</td>
+                                <td>{{dispositivo.almacenamiento}}</td>
+                                <td>{{dispositivo.procesador}}</td>
+                                <td>{{dispositivo.numero_cores}}</td>
+                                <td>{{dispositivo.marca}}</td>
                                 <td>
                                       
                                      <!-- Button trigger modal -->
@@ -117,37 +136,50 @@
                             [(ngModel)]="dispositivoService.selectedDispositivo._id">
                         </div>  
                         <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Color" name="color"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.color">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Descripcion" name="descripcion"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder=" Modelo" name="modelo"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Codigo_modelo" name="codigo_modelo"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Existencia" name="existencia"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Precio" name="precio"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.precio">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Ram" name="ram"
+                            [(ngModel)]="dispositivoService.selectedDispositivo.ram">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Almacenamiento" name="almacenamiento"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
+                        </div>
+                        <div class="form-group">
+                            <input type="string" class="form-control" placeholder="Procesador" name="procesador"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Numero_Cores" name="numero_cores"
+                                [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
+                        </div>
+                        <div class="form-group">
                               <input type="text" class="form-control" placeholder=" Marca" name="marca"
                               [(ngModel)]="dispositivoService.selectedDispositivo.marca">
                           </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Memoria" name="memoria"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Modelo" name="modelo"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Serie" name="numeroSerie"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.numeroSerie">
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Procesador" name="procesador"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Resolucion" name="resolucion"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.resolucion">
-                          </div>
-                          <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Tipo" name="tipo"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.tipo">
-                          </div>
-                          <div class="form-group">
-                              <input type="number" class="form-control" placeholder="Precio" name="precio"
-                                  [(ngModel)]="dispositivoService.selectedDispositivo.precio">
-                          </div>
+                         
                          
                           <button class="btn btn-secondary" >Save</button>
                       </form>

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DispositivosComponent } from './components/dispositivos/dispositivos.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { CatalogoClienteComponent } from './components/catalogo-cliente/catalogo-cliente.component';
+import { CatalogoAdminComponent } from './components/catalogo-admin/catalogo-admin.component';
 import { AppRoutingModule } from './app-routing.module';
 import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
+
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { HistorialComponent } from './components/historial/historial.component'
 
@@ -21,10 +23,11 @@ import { HistorialComponent } from './components/historial/historial.component'
     DispositivosComponent,
     SignupComponent,
     SigninComponent,
-    CatalogoClienteComponent,
+    CatalogoAdminComponent,
     PedidoComponent,
     AdminPedidosComponent,
     PruebaComponent,
+    ReporteComponent,
     ClientesComponent,
     HistorialComponent
   ],
