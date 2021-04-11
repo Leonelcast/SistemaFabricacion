@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
-import { PruebaComponent } from './components/prueba/prueba.component'
+import { PruebaComponent } from './components/prueba/prueba.component';
+import { ReporteComponent } from './components/reporte/reporte.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PruebaComponent } from './components/prueba/prueba.component'
     CatalogoAdminComponent,
     PedidoComponent,
     AdminPedidosComponent,
-    PruebaComponent
+    PruebaComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,

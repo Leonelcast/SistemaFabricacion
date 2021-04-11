@@ -12,6 +12,8 @@ import{DispositivosComponent} from './components/dispositivos/dispositivos.compo
 import{PedidoComponent} from './components/pedido/pedido.component'
 import{AdminPedidosComponent} from './components/admin-pedidos/admin-pedidos.component'
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
+
 
 
 
@@ -48,6 +50,10 @@ const routes: Routes = [
   {
     path: 'prueba',
     component:PruebaComponent
+  },
+  {
+    path: 'reporte',
+    component:ReporteComponent
   }
 ];
 
