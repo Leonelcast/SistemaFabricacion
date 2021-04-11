@@ -11,15 +11,20 @@ export class DispositivoService {
 
   selectedDispositivo: Dispositivo ={
     _id: '',
-    marca: '',
-    memoria: '',
-    modelo: '',
-    numeroSerie: '',
-    precio: 0,
+    color:'',
+    descripcion:'',
+    modelo:'',
+    codigo_modelo:'',
+    existencia:0,
+    precio:0,
+    ram:0,
+    almacenamiento:0,
     procesador: '',
-    resolucion: '',
-    tipo: ''
+    numero_cores:0,
+    marca: '',
   };
+
+  
 
   dispositivos: Dispositivo[] = [];
 

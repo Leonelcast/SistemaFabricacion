@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../../services/auth.service'
-import {Router} from '@angular/router'
+import {AuthService} from '../../services/auth.service';
+import { NgForm } from '@angular/forms';
+import {Router} from '@angular/router';
+import {User} from '../../models/user';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -26,10 +28,12 @@ export class SignupComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res)
-        this.router.navigate(['/signIn'])
-
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/catalogoAdmin'])
       },
       err => console.log(err)
     )
   }
+
+ 
 }
