@@ -1,16 +1,13 @@
 <<<<<<< HEAD
 ###
-GET     http://localhost:8081/data
+GET     http://localhost:8081/api/pedidos/aggregation
 
 ###
-GET  http://localhost:5000/api/users
+GET  http://localhost:5000/api/pedidos/aggregate  
 
 ### 
 GET http://localhost:5000/api/pedidos
-<<<<<<< HEAD
->>>>>>> 195fa3d60a29ed401de4cacdab22413cb9010605
->>>>>>> eve
-=======
+
 ### 
 GET http://localhost:5000/api/Sventas/intento
 >>>>>>> origin/eve

@@ -3,6 +3,8 @@ const pedidosController = {}
 
 const Pedidos = require('../models/Pedidos')
 const Dispositivos = require('../models/Dispositivos')
+const { response } = require('express')
+const { Model } = require('mongoose')
 
 
 pedidosController.getPedidos = async (req, res) => {
@@ -34,6 +36,16 @@ pedidosController.deletePedido = async (req, res) => {
     res.json({status: 'Pedido eliminado'})
 
 }
+//aggregate
+pedidosController.getAgregate = async (req, res) => {
+  const agPedido = await Model.aggregate([
+        {$match: { 
+            estado: "Empacando"
+        }}
+    ]).res.json(agPedido)
+}
+
+
 
 
 
