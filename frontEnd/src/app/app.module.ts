@@ -12,7 +12,8 @@ import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
-import { ClientesComponent } from './components/clientes/clientes.component'
+import { ClientesComponent } from './components/clientes/clientes.component';
+import { HistorialComponent } from './components/historial/historial.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ClientesComponent } from './components/clientes/clientes.component'
     PedidoComponent,
     AdminPedidosComponent,
     PruebaComponent,
-    ClientesComponent
+    ClientesComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

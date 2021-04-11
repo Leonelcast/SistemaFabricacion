@@ -27,6 +27,10 @@ Content-Type: application/json
 
 "cantidad": 6, "total": 458, "fecha_p": "2021-03-10T06:00:00.000Z", "fecha_e": "2021-03-15T06:00:00.000Z", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60441ce038ab18207cc23d87", "createdAt": "2021-03-11T01:41:38.689Z", "updatedAt": "2021-03-11T01:41:38.689Z"
 }
+
+###
+Get http://localhost:5000/api/users 
+
 ###
 POST http://localhost:5000/api/users 
 Content-Type: application/json
@@ -65,3 +69,20 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/cliente
+
+
+### 
+POST http://localhost:5000/api/historial
+Content-Type: application/json
+
+{
+
+    "user":"Prueba",
+    "accion":"Prueba",
+    "fecha":"2021-03-15T06:00:00.000Z"
+   
+}
+
+###
+
+get http://localhost:5000/api/historial/borrar
