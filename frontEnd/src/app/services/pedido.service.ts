@@ -18,7 +18,7 @@ export class PedidoService {
     fecha_p: '',
     fecha_e: '',
     dispositivo:null,
-    user:null,
+    cliente:null,
     estado:''
 
   };

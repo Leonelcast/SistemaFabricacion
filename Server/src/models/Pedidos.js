@@ -10,9 +10,9 @@ const pedidoSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Dispositivos'
     },
-    user:{
+    cliente:{
         type: Schema.Types.ObjectId,
-        ref: 'Users'
+        ref: 'Cliente'
     }
    
 });
