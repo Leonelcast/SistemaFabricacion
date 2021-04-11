@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DispositivoService } from '../../services/dispositivo.service';
+import { HistorialService } from '../../services/historial.service';
 import { NgForm } from '@angular/forms';
-import { Dispositivo } from '../../models/dispositivos'
+import { Dispositivo } from '../../models/dispositivos';
+import { Historial } from '../../models/historial';
 
 
 @Component({
@@ -13,7 +15,8 @@ import { Dispositivo } from '../../models/dispositivos'
 export class DispositivosComponent implements OnInit {
 
 
-  constructor(public dispositivoService: DispositivoService) { }
+  constructor(public dispositivoService: DispositivoService , public historialService : HistorialService) { }
+  
 
   ngOnInit(): void {
     this.getDispositivos();
@@ -28,6 +31,9 @@ export class DispositivosComponent implements OnInit {
       err => console.error(err)
     )
     location.reload();
+    
+
+
   }
   
   
@@ -40,6 +46,22 @@ updateDispositivo(form: NgForm){
      err => console.error(err)
    )
   }
+
+ //Guardar en el historial 
+  const historia:Historial ={
+   
+    user: localStorage.getItem("nombre"),
+    accion:"Actualizo el dispostivo",
+    fecha: new Date()
+
+  }; 
+
+  this.historialService.createHistorial(historia).subscribe(
+      res => {
+        this.getHistorial();
+      },
+      err => console.error(err)
+    ); 
   location.reload();
 }
 
@@ -68,6 +90,17 @@ updateDispositivo(form: NgForm){
         (err) => console.error(err)
       );
     }
+
+  }
+
+
+  getHistorial() {
+    this.historialService.getHistorial().subscribe(
+      res => {
+        this.historialService.historia = res;
+      },
+      err => console.error(err)
+    );
 
   }
 

@@ -12,7 +12,10 @@ import {AuthGuard} from './auth.guard';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { AdminPedidosComponent } from './components/admin-pedidos/admin-pedidos.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
-import { ReporteComponent } from './components/reporte/reporte.component'
+import { ReporteComponent } from './components/reporte/reporte.component';
+
+import { ClientesComponent } from './components/clientes/clientes.component';
+import { HistorialComponent } from './components/historial/historial.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ReporteComponent } from './components/reporte/reporte.component'
     PedidoComponent,
     AdminPedidosComponent,
     PruebaComponent,
-    ReporteComponent
+    ReporteComponent,
+    ClientesComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,

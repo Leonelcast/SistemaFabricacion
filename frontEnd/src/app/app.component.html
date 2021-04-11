@@ -19,9 +19,18 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/pedidos" routerLinkActive="active">Pedidos</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Clientes" routerLinkActive="active">CLIENTES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Historial" routerLinkActive="active">Historial</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" routerLink="/signUp" routerLinkActive="active">SingUp</a>
         </li>
+
       </ul>
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!authService.loggedIn(); else loggedIn">

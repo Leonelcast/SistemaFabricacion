@@ -8,6 +8,7 @@ export interface Dispositivo {
     precio: number,
     ram: number,
     almacenamiento: number,
+    numeroSerie: string,    
     procesador: string,
     numero_cores: number,
     marca: string,

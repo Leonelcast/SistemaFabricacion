@@ -50,6 +50,10 @@ Content-Type: application/json
   "createdAt": "2021-03-11T01:41:38.689Z",
   "updatedAt": "2021-03-11T01:41:38.689Z"
 }
+
+###
+Get http://localhost:5000/api/users 
+
 ###
 POST http://localhost:5000/api/users 
 Content-Type: application/json
@@ -74,6 +78,7 @@ Content-Type: application/json
 POST http://localhost:5000/api/pedidos 
 Content-Type: application/json
 
+<<<<<<< HEAD
 {
 "cantidad": 6, 
 "total": 458, 
@@ -82,3 +87,40 @@ Content-Type: application/json
 "dispositivo": "6046a9ed5181b70314f6d352", 
 "user": "60497a8ae2b1596118284fd4"
 }
+=======
+{ "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60497a8ae2b1596118284fd4" }
+
+### 
+POST http://localhost:5000/api/cliente
+Content-Type: application/json
+
+{
+
+    "nombre":"Prueba",
+    "patente":"Prueba",
+    "usuario":"Prueba",
+    "contraseña":"Prueba",
+    "ip":"Prueba",
+    "puerto":"Prueba"
+}
+
+###
+GET http://localhost:5000/api/cliente
+
+
+### 
+POST http://localhost:5000/api/historial
+Content-Type: application/json
+
+{
+
+    "user":"Prueba",
+    "accion":"Prueba",
+    "fecha":"2021-03-15T06:00:00.000Z"
+   
+}
+
+###
+
+get http://localhost:5000/api/historial/borrar
+>>>>>>> 269da3361b33c9333a4450b1a67e4f325b62ab7a
