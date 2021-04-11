@@ -1,1 +1,44 @@
-<p>historial works!</p>
+<div class="row"> 
+    <div class="col-md-1">
+     
+      
+    </div>
+    <div class="col-md-10">
+
+        <div class="container-lg">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>HISTORIAL DE CAMBIOS</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Cambio</th>
+                                <th>Usario</th>
+                                <th>Fecha cambios</th>
+                         
+                         
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let historia of historialService.historia">
+                                <td>{{historia.accion}}</td>
+                                <td>{{historia.user}}</td>
+                                <td>{{historia.fecha}}</td>
+                              
+
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+

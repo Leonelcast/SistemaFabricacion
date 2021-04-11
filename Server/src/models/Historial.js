@@ -7,4 +7,5 @@ const historialSchema = new Schema({
    
 });
 
-module.exports = model("Historial", historialSchema);
+
+module.exports = model("Historial", historialSchema); 
