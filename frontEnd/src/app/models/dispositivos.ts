@@ -4,7 +4,7 @@ export interface Dispositivo {
     memoria: string,
     modelo: string,
     numeroSerie: string,
-    precio: number,
+    precio: number | null,
     procesador: string,
     resolucion: string,
     tipo: string,

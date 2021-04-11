@@ -1,0 +1,161 @@
+<div class="row"> 
+    <div class="col-md-1">
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Insertar
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form #clientesForm="ngForm" (ngSubmit)="addCliente(clientesForm)">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre"
+                            [(ngModel)]="clientesService.selectedCliente.nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Patente" name="patente"
+                            [(ngModel)]="clientesService.selectedCliente.patente">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Usuario" name="usuario"
+                            [(ngModel)]="clientesService.selectedCliente.usuario">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="contraseña" name="contra"
+                            [(ngModel)]="clientesService.selectedCliente.contra">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="ip" name="ip"
+                            [(ngModel)]="clientesService.selectedCliente.ip">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="puerto" name="puerto"
+                            [(ngModel)]="clientesService.selectedCliente.puerto">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="dias_entrega" name="dias_entrega"
+                            [(ngModel)]="clientesService.selectedCliente.dias_entrega">
+                        </div>
+                     
+                        <button class="btn btn-secondary">Save</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      
+    </div>
+    <div class="col-md-10">
+
+        <div class="container-lg">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>Clientes</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                         
+                              
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let cliente of clientesService.clientes">
+                                <td>{{cliente.nombre}}</td>
+                                <td>{{cliente.patente}}</td>
+                                <td>{{cliente.usuario}}</td>
+                                <td>{{cliente.contra}}</td>
+                                <td>{{cliente.ip}}</td>
+                                <td>{{cliente.puerto}}</td>
+                                <td>{{cliente.dias_entrega}}</td>
+                               
+                                <td>
+                                      
+                                    <!-- Button trigger modal -->
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" (click)="editCliente(cliente)">
+           <i class="material-icons">edit</i>
+           </button>
+           
+           <!-- Modal -->
+           <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                   </button>
+                 </div>
+                 <div class="modal-body">
+                   <form #updateForm="ngForm" (ngSubmit)="updateCliente(updateForm)">
+                       <div class="form-group">
+                           <input type="hidden" name="_id"
+                           [(ngModel)]="clientesService.selectedCliente._id">
+                       </div>  
+                       <div class="form-group">
+                             <input type="text" class="form-control" placeholder="Nombre" name="nombre"
+                             [(ngModel)]="clientesService.selectedCliente.nombre">
+                         </div>
+
+                         <div class="form-group">
+                           <input type="text" class="form-control" placeholder="Patente" name="patente"
+                           [(ngModel)]="clientesService.selectedCliente.patente">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="Usuario" name="usuario"
+                           [(ngModel)]="clientesService.selectedCliente.usuario">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="contraseña" name="contra"
+                           [(ngModel)]="clientesService.selectedCliente.contra">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="ip" name="ip"
+                           [(ngModel)]="clientesService.selectedCliente.ip">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="puerto" name="puerto"
+                           [(ngModel)]="clientesService.selectedCliente.puerto">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="dias_entrega" name="dias_entrega"
+                           [(ngModel)]="clientesService.selectedCliente.dias_entrega">
+                       </div>
+                         
+                        
+                         <button class="btn btn-secondary" >Save</button>
+                     </form>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <button class="btn btn-danger bt-sm" (click)="deleteCliente(cliente._id)">
+            <i class="material-icons">delete_forever</i>
+        </button>
+                               </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

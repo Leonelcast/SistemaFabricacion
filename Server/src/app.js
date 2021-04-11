@@ -18,5 +18,7 @@ app.use("/api/users", require('./routes/users.routes'));
 
 app.use("/api/pedidos", require('./routes/pedidos.routes'));
 
+app.use("/api/cliente", require('./routes/cliente.routes'));
+
 
 module.exports = app;

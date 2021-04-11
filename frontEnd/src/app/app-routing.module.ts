@@ -12,7 +12,7 @@ import{DispositivosComponent} from './components/dispositivos/dispositivos.compo
 import{PedidoComponent} from './components/pedido/pedido.component'
 import{AdminPedidosComponent} from './components/admin-pedidos/admin-pedidos.component'
 import { PruebaComponent } from './components/prueba/prueba.component';
-
+import {ClientesComponent} from './components/clientes/clientes.component';
 
 
 const routes: Routes = [
@@ -47,7 +47,15 @@ const routes: Routes = [
   {
     path: 'prueba',
     component:PruebaComponent
+  },
+
+  {
+    path: 'Clientes',
+    component:ClientesComponent,
+    canActivate: [AuthGuard]
+    
   }
+
 ];
 
 @NgModule({
