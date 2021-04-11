@@ -22,6 +22,7 @@ export class DispositivoService {
     procesador: '',
     numero_cores:0,
     marca: '',
+    numeroSerie:''
   };
 
   

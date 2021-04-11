@@ -6,7 +6,7 @@ const Dispositivos = require('../models/Dispositivos')
 
 
 pedidosController.getPedidos = async (req, res) => {
-    const pedidos = await Pedidos.find().populate('dispositivo').populate('user')
+    const pedidos = await Pedidos.find().populate('dispositivo').populate('cliente')
     res.json(pedidos)
 }
 //CREATE

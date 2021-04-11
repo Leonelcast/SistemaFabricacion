@@ -5,8 +5,8 @@
 
                 <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
                     <label>Cliente</label>
-                    <select [(ngModel)]="pedidoService.selectedPedido.user"  name="user" class="form-control">
-                        <option *ngFor="let user of authService.user" value="{{user._id}}">{{user.nombre}}
+                    <select [(ngModel)]="pedidoService.selectedPedido.cliente"  name="cliente" class="form-control">
+                        <option *ngFor="let cliente of clienteService.clientes" value="{{cliente._id}}">{{cliente.nombre}}
                             </option>
                             </select>
                             <label>Dispositivo</label>
@@ -64,14 +64,14 @@
                         <tbody>
                             <tr *ngFor="let pedido of pedidoService.pedido">
                                 <td>{{pedido.cantidad}}</td>
-                                <td >{{pedido.dispositivo.precio * pedido.cantidad}?} </td>
+                                <td>{{pedido.dispositivo.precio * pedido.cantidad}} </td>
                    
 
 
                                 <td>{{pedido.fecha_p}}</td>
                                 <td>{{pedido.fecha_e}}</td>
-                                <td >{{pedido.dispositivo.modelo}?}</td>
-                                <td>{{pedido.user.nombre}?}</td>
+                                <td>{{pedido.dispositivo.modelo}}</td>
+                                <td>{{pedido.cliente.nombre}}</td>
                                 <td>{{pedido.estado}}</td>
                                
                                 <td>
