@@ -7,7 +7,7 @@ import {AuthGuard} from './auth.guard'
 //COMPONENTS
 import{SigninComponent} from './components/signin/signin.component'
 import{SignupComponent} from './components/signup/signup.component'
-import{CatalogoClienteComponent} from './components/catalogo-cliente/catalogo-cliente.component'
+import{CatalogoAdminComponent} from './components/catalogo-admin/catalogo-admin.component'
 import{DispositivosComponent} from './components/dispositivos/dispositivos.component'
 import{PedidoComponent} from './components/pedido/pedido.component'
 import{AdminPedidosComponent} from './components/admin-pedidos/admin-pedidos.component'
@@ -26,8 +26,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'catalogoCliente',
-    component:CatalogoClienteComponent,
+    path: 'catalogoAdmin',
+    component:CatalogoAdminComponent,
     canActivate: [AuthGuard]
   },
   {

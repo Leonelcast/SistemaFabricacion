@@ -4,11 +4,11 @@ import { NgForm } from '@angular/forms';
 import { User } from '../../models/user';
 
 @Component({
-  selector: 'app-catalogo-cliente',
-  templateUrl: './catalogo-cliente.component.html',
-  styleUrls: ['./catalogo-cliente.component.css']
+  selector: 'app-catalogo-admin',
+  templateUrl: './catalogo-admin.component.html',
+  styleUrls: ['./catalogo-admin.component.css']
 })
-export class CatalogoClienteComponent implements OnInit {
+export class CatalogoAdminComponent implements OnInit {
 
   constructor(public authService: AuthService) { }
 
@@ -23,6 +23,22 @@ export class CatalogoClienteComponent implements OnInit {
       err => console.error(err)
     );
   }
+
+  updateUser(form: NgForm){
+    if(form.value._id){
+      this.authService.putUser(form.value).subscribe(
+       res => {
+         this.getUser();
+       },
+       err => console.error(err)
+     )
+    }
+    location.reload();
+  }
+
+  editUser(user: User) {
+    this.authService.selectedUser = user;
+  }
   deleteUser(id: string) {
     if (confirm('¿estas seguro de que lo quieres eliminar?')) {
       this.authService.deleteUser(id).subscribe(
@@ -34,5 +50,4 @@ export class CatalogoClienteComponent implements OnInit {
     }
 
   }
-
 }

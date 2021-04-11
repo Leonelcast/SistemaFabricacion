@@ -16,8 +16,8 @@ export class SignupComponent implements OnInit {
     password: ''
   }
   constructor(
-    public authService: AuthService,
-    public router: Router
+    private authService: AuthService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -29,46 +29,11 @@ export class SignupComponent implements OnInit {
       res => {
         console.log(res)
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/signUp'])
-
+        this.router.navigate(['/catalogoAdmin'])
       },
       err => console.log(err)
     )
   }
 
-  getUser() {
-    this.authService.getUser().subscribe(
-      res =>{
-        this.authService.user = res;
-      },
-      err => console.error(err)
-    );
-  }
-
-  updateUser(form: NgForm){
-    if(form.value._id){
-      this.authService.putUser(form.value).subscribe(
-       res => {
-         this.getUser();
-       },
-       err => console.error(err)
-     )
-    }
-    location.reload();
-  }
-
-  editUser(user: User) {
-    this.authService.selectedUser = user;
-  }
-  deleteUser(id: string) {
-    if (confirm('¿estas seguro de que lo quieres eliminar?')) {
-      this.authService.deleteUser(id).subscribe(
-        (res) => {
-          this.getUser();
-        },
-        (err) => console.error(err)
-      );
-    }
-
-  }
+ 
 }
