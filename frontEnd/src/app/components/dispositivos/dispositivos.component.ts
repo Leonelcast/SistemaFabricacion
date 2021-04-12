@@ -30,6 +30,7 @@ export class DispositivosComponent implements OnInit {
       },
       err => console.error(err)
     )
+
     location.reload();
     
 
