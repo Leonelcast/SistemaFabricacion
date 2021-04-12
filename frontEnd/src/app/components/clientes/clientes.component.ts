@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../services/clientes.service';
 import { NgForm } from '@angular/forms';
 import { Cliente } from '../../models/cliente'
-
+import { HistorialService } from '../../services/historial.service';
+import { Historial } from '../../models/historial';
 
 @Component({
   selector: 'app-clientes',
@@ -13,7 +14,7 @@ import { Cliente } from '../../models/cliente'
 export class ClientesComponent implements OnInit {
 
 
-  constructor(public clientesService: ClientesService) { }
+  constructor(public clientesService: ClientesService, public historialService : HistorialService) { }
 
   ngOnInit(): void {
     this.getClientes();
@@ -26,6 +27,21 @@ export class ClientesComponent implements OnInit {
       },
       err => console.error(err)
     )
+     //Guardar en el historial 
+     const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Inserto Cliente",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
     location.reload();
   }
 
@@ -48,6 +64,21 @@ export class ClientesComponent implements OnInit {
        err => console.error(err)
      )
     }
+     //Guardar en el historial 
+     const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Actualizo Cliente",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
     location.reload();
   }
   editCliente(cliente: Cliente) {
@@ -63,11 +94,32 @@ export class ClientesComponent implements OnInit {
         (err) => console.error(err)
       );
     }
+     //Guardar en el historial 
+     const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Elimino Cliente",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
 
   }
+  getHistorial() {
+    this.historialService.getHistorial().subscribe(
+      res => {
+        this.historialService.historia = res;
+      },
+      err => console.error(err)
+    );
 
-
- 
+  }
 
 
 }

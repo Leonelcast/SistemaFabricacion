@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { NgForm } from '@angular/forms';
 import { User } from '../../models/user';
+import { HistorialService } from '../../services/historial.service';
+import { Historial } from '../../models/historial';
 
 @Component({
   selector: 'app-catalogo-admin',
@@ -10,7 +12,7 @@ import { User } from '../../models/user';
 })
 export class CatalogoAdminComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public historialService : HistorialService) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -33,6 +35,21 @@ export class CatalogoAdminComponent implements OnInit {
        err => console.error(err)
      )
     }
+     //Guardar en el historial 
+     const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Actualizo Administrador",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
     location.reload();
   }
 
@@ -48,6 +65,32 @@ export class CatalogoAdminComponent implements OnInit {
         (err) => console.error(err)
       );
     }
+
+     //Guardar en el historial 
+     const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Elimino Administrador",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
+
+  }
+
+  getHistorial() {
+    this.historialService.getHistorial().subscribe(
+      res => {
+        this.historialService.historia = res;
+      },
+      err => console.error(err)
+    );
 
   }
 }

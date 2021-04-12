@@ -30,6 +30,21 @@ export class DispositivosComponent implements OnInit {
       },
       err => console.error(err)
     )
+     //Guardar en el historial 
+    const historia:Historial ={
+   
+    user: localStorage.getItem("nombre"),
+    accion:"Inserto dispostivo",
+    fecha: new Date()
+
+   }; 
+
+    this.historialService.createHistorial(historia).subscribe(
+        res => {
+          this.getHistorial();
+        },
+        err => console.error(err)
+      ); 
     location.reload();
     
 
@@ -51,7 +66,7 @@ updateDispositivo(form: NgForm){
   const historia:Historial ={
    
     user: localStorage.getItem("nombre"),
-    accion:"Actualizo el dispostivo",
+    accion:"Actualizo  dispostivo",
     fecha: new Date()
 
   }; 
@@ -90,6 +105,21 @@ updateDispositivo(form: NgForm){
         (err) => console.error(err)
       );
     }
+    //Guardar en el historial 
+    const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Elimino dispostivo",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
 
   }
 
