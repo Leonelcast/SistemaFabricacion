@@ -9,6 +9,7 @@ import { Pedidos } from '../../models/pedido'
 
 
 
+
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -31,6 +32,7 @@ export class PedidoComponent implements OnInit {
        },
        err => console.error(err)
      )
+     location.reload();
     
    }
    

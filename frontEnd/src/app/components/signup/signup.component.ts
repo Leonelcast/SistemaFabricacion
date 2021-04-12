@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router';
+import { HistorialService } from '../../services/historial.service';
 import {User} from '../../models/user';
+import { Historial } from '../../models/historial';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,7 +19,7 @@ export class SignupComponent implements OnInit {
   }
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router, public historialService : HistorialService
     ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,33 @@ export class SignupComponent implements OnInit {
       },
       err => console.log(err)
     )
+    //Guardar en el historial 
+    const historia:Historial ={
+   
+      user: localStorage.getItem("nombre"),
+      accion:"Inserto Administrador",
+      fecha: new Date()
+  
+     }; 
+  
+      this.historialService.createHistorial(historia).subscribe(
+          res => {
+            this.getHistorial();
+          },
+          err => console.error(err)
+        ); 
   }
 
- 
+  getHistorial() {
+    this.historialService.getHistorial().subscribe(
+      res => {
+        this.historialService.historia = res;
+      },
+      err => console.error(err)
+    );
+
+  }
+
+
+
 }
