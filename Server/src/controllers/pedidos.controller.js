@@ -11,7 +11,30 @@ pedidosController.getPedidos = async (req, res) => {
 }
 //CREATE
 pedidosController.createPedido = async  (req, res) => {
-    const newPedido = new Pedidos(req.body)
+    const newPedido = new Pedidos(req.body); 
+      await newPedido.save()
+    console.log(req.body)
+    res.json('pedido creado')
+}
+
+pedidosController.createPedido2 = async  (req, res) => {
+    const newPedido = new Pedidos(req.body);
+    newPedido.num_serie = [];   
+    
+    
+    for(var i=1; i <= newPedido.cantidad ; i++){
+     
+      var num = Math.floor(Math.random() * (10000000000000 - 1000000000));
+
+      let numserie = {num:  "F-" +newPedido.dispositivo + "/"+ num } ;
+     
+      newPedido.num_serie.push(numserie)
+
+
+    
+
+   }
+
     await newPedido.save()
     console.log(req.body)
     res.json('pedido creado')
