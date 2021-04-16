@@ -1,4 +1,3 @@
-  
 const pedidosController = {}
 
 const Pedidos = require('../models/Pedidos')
@@ -55,6 +54,78 @@ pedidosController.deletePedido = async (req, res) => {
     await Pedidos.findByIdAndDelete(req.params.id)
    res.json({status: 'Pedido eliminado'})
 
+}
+
+
+
+
+
+
+pedidosController.getAggregate = async (req, res) => {
+    const getAggregate = await Pedidos.aggregate([
+        {
+
+            "$lookup": {
+                "from": "dispositivos",
+                "localField": "dispositivo",
+                "foreignField": "_id",
+                "as": "dispositivoCol"
+            }
+        },
+        {
+            "$match": {
+                "estado": "Empacando"
+            }
+        },
+        {
+            "$group": {
+                "_id": "$fecha_p",
+                "Dispositivo": {
+                    "$push": "$dispositivoCol.modelo"
+                },
+                "cantidad": {
+                    "$sum": "$cantidad"
+                }
+            }
+        }
+
+    ]).allowDiskUse(true);
+    res.json(getAggregate)
+}
+
+pedidosController.getAggregate2 = async (req, res) => {
+    const getAggregate2 = await Pedidos.aggregate([
+        { 
+            "$lookup" : { 
+                "from" : "clientes", 
+                "localField" : "cliente", 
+                "foreignField" : "_id", 
+                "as" : "clienteCol"
+            }
+        }, 
+        { 
+            "$replaceRoot" : { 
+                "newRoot" : { 
+                    "$mergeObjects" : [
+                        { 
+                            "$arrayElemAt" : [
+                                "$clienteCol", 
+                                0.0
+                            ]
+                        }, 
+                        "$$ROOT"
+                    ]
+                }
+            }
+        }, 
+        { 
+            "$match" : { 
+                "estado" : "Entregado"
+            }
+        }
+
+    ]).allowDiskUse(true);
+    res.json(getAggregate2)
 }
 
 

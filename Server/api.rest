@@ -1,7 +1,17 @@
+
+###
+GET  http://localhost:5000/api/pedidos/read/aggregate
+
+###
+GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1
+
 ### 
-GET http://25.2.28.163:5000/api/pedidos
+
+GET http://localhost:5000/api/pedidos
+
 ### 
 GET http://localhost:5000/api/Sventas/intento
+
 
 ### 
 GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352
@@ -16,16 +26,24 @@ POST http://localhost:5000/api/dispositivos Content-Type: application/json
 ### 
 GET http://localhost:5000/api/dispositivos
 
-### 
+###
 DELETE http://localhost:5000/api/pedidos/60497552e2b1596118284fd2
 
-### 
-PUT localhost:5000/api/pedidos/60497552e2b1596118284fd2 
+
+###
+PUT localhost:5000/api/pedidos/60497552e2b1596118284fd2
 Content-Type: application/json
 
 {
 
-"cantidad": 6, "total": 458, "fecha_p": "2021-03-10T06:00:00.000Z", "fecha_e": "2021-03-15T06:00:00.000Z", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60441ce038ab18207cc23d87", "createdAt": "2021-03-11T01:41:38.689Z", "updatedAt": "2021-03-11T01:41:38.689Z"
+  "cantidad": 6,
+  "total": 458,
+  "fecha_p": "2021-03-10T06:00:00.000Z",
+  "fecha_e": "2021-03-15T06:00:00.000Z",
+  "dispositivo": "6046a9ed5181b70314f6d352",
+  "user": "60441ce038ab18207cc23d87",
+  "createdAt": "2021-03-11T01:41:38.689Z",
+  "updatedAt": "2021-03-11T01:41:38.689Z"
 }
 
 ###
@@ -35,8 +53,12 @@ Get http://localhost:5000/api/users
 POST http://localhost:5000/api/users 
 Content-Type: application/json
 
-{
-"email": "Tigo", "email": "LeoneI@gmail.com", "password":"password", "roles": "hola"
+{   
+    "email": "Tigo",
+    "email": "LeoneI@gmail.com",
+    "password":"password",
+    "roles": "hola"
+
 }
 
 ### 
@@ -50,6 +72,16 @@ Content-Type: application/json
 ### 
 POST http://localhost:5000/api/pedidos/Gio
 Content-Type: application/json
+
+
+{
+"cantidad": 6, 
+"total": 458, 
+"fecha_p": "03-10-2021", 
+"fecha_e": "03-15-2021", 
+"dispositivo": "6046a9ed5181b70314f6d352", 
+"user": "60497a8ae2b1596118284fd4"
+}
 
 { "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60497a8ae2b1596118284fd4" }
 
@@ -88,8 +120,8 @@ Content-Type: application/json
 get http://localhost:5000/api/historial/borrar
 
 
-###
 
+###
 post http://localhost:5000/api/pedidos/607917c599554f372401571c
 Content-Type: application/json
 
@@ -108,3 +140,4 @@ POST http://localhost:5000/api/pedidos/Gio
 Content-Type: application/json
 
 { "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6073c82dcabd0d330c47be8c", "user": "60497a8ae2b1596118284fd4" }
+

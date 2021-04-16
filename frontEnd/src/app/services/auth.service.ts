@@ -44,7 +44,7 @@ export class AuthService {
      return !!localStorage.getItem('token')
    }
 
-
+   
   
 
    logOut(){
@@ -57,7 +57,6 @@ export class AuthService {
   }
 
   rol(){
-    return localStorage.getItem
+    return// this.http.(this.URL_API);
    }
- 
 }

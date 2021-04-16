@@ -15,6 +15,9 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
 import {ClientesComponent} from './components/clientes/clientes.component';
 import {HistorialComponent} from './components/historial/historial.component';
+import {AggregateComponent} from './components/aggregate/aggregate.component';
+import {Aggregate2Component} from './components/aggregate2/aggregate2.component';
+
 
 
 
@@ -70,7 +73,15 @@ const routes: Routes = [
     canActivate: [AuthGuard]
     
 
-  }
+  }, 
+  {
+    path: 'aggregate',
+    component:AggregateComponent
+  },
+  {
+    path: 'aggregate2',
+    component:Aggregate2Component
+  },
 
 
 ];

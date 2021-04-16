@@ -1,0 +1,43 @@
+<div class="col-md-10">
+
+    <div class="container-lg">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h2>Pedidos</h2>
+                        </div>
+
+                    </div>
+                </div>
+                <table id="excel-table" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>CANTIDAD</th>
+                            <th>TOTAL</th>
+                            <th>FECHA DEL PEDIDO</th>
+                            <th>FECHA ENTREGA</th>
+                            <th>DISPOSITIVO</th>
+                            <th>CLIENTE</th>
+                            <th>ESTADO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pedido of pedidoService.pedido">
+                            <td>{{pedido.cantidad}}</td>
+                            <td>{{pedido.dispositivo.precio * pedido.cantidad}} </td>
+                            <td>{{pedido.fecha_p}}</td>
+                            <td>{{pedido.fecha_e}}</td>
+                            <td>{{pedido.dispositivo.modelo}}</td>
+                            <td>{{pedido.cliente.nombre}}</td>
+                            <td>{{pedido.estado}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+         <button (click)="exportexcel()"> Descargar </button>
+         </div>
+         </div>
+
+</div>
+
