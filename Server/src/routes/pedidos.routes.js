@@ -6,10 +6,13 @@ const router = express.Router()
 router.get('/:id', pedidosController.getPedido);
 router.get('/', pedidosController.getPedidos);
 router.post('/',pedidosController.createPedido);
+router.post('/:modelo',pedidosController.createPedido2);
 router.put('/:id', pedidosController.updatePedido);
 router.delete('/:id', pedidosController.deletePedido);
 router.get('/read/aggregate', pedidosController.getAggregate);
 router.get('/read/aggregate2', pedidosController.getAggregate2);
+
+
 
 
 

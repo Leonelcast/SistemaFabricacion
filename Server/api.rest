@@ -1,17 +1,17 @@
-<<<<<<< HEAD
+
 ###
 GET  http://localhost:5000/api/pedidos/read/aggregate
 
 ###
 GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1
-=======
+
 ### 
 
 GET http://localhost:5000/api/pedidos
 
 ### 
 GET http://localhost:5000/api/Sventas/intento
->>>>>>> 21a7f5b1a2c6b50e5970d3e296fbb04c1f0b2dd0
+
 
 ### 
 GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352
@@ -24,7 +24,7 @@ POST http://localhost:5000/api/dispositivos Content-Type: application/json
 }
 
 ### 
-GET http://25.2.28.163:5000/api/dispositivos
+GET http://localhost:5000/api/dispositivos
 
 ###
 DELETE http://localhost:5000/api/pedidos/60497552e2b1596118284fd2
@@ -70,10 +70,10 @@ Content-Type: application/json
 }
 
 ### 
-POST http://localhost:5000/api/pedidos 
+POST http://localhost:5000/api/pedidos/Gio
 Content-Type: application/json
 
-<<<<<<< HEAD
+
 {
 "cantidad": 6, 
 "total": 458, 
@@ -82,7 +82,7 @@ Content-Type: application/json
 "dispositivo": "6046a9ed5181b70314f6d352", 
 "user": "60497a8ae2b1596118284fd4"
 }
-=======
+
 { "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60497a8ae2b1596118284fd4" }
 
 ### 
@@ -118,4 +118,26 @@ Content-Type: application/json
 ###
 
 get http://localhost:5000/api/historial/borrar
->>>>>>> 269da3361b33c9333a4450b1a67e4f325b62ab7a
+
+
+
+###
+post http://localhost:5000/api/pedidos/607917c599554f372401571c
+Content-Type: application/json
+
+{
+
+    "Estado":"Entregado"
+    
+}
+
+
+### 
+GET http://localhost:5000/api/pedidos
+
+### 
+POST http://localhost:5000/api/pedidos/Gio
+Content-Type: application/json
+
+{ "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6073c82dcabd0d330c47be8c", "user": "60497a8ae2b1596118284fd4" }
+

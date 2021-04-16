@@ -24,9 +24,10 @@ export class PedidoComponent implements OnInit {
     this.getClientes();
   }
 
-  addPedido(form: NgForm) {
+  addPedido(form: NgForm ) {
+    var x = (<HTMLInputElement>document.getElementById("modelo")).value;
   
-     this.pedidoService.createPedido(form.value).subscribe(
+     this.pedidoService.createPedido(form.value,x).subscribe(
        res => {
          this.getPedidos();
        },
@@ -79,5 +80,7 @@ export class PedidoComponent implements OnInit {
      }
  
    }
+
+ 
  
 }

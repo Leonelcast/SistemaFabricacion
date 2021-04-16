@@ -10,8 +10,8 @@
                             </option>
                             </select>
                             <label>Dispositivo</label>
-                            <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control">
-                                <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}">{{dispositivo.modelo}}
+                            <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control" id="modelo">
+                                <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}"name="modelo" >{{dispositivo.modelo}}
                                     </option>
                                     </select>
                                     <br>
@@ -29,6 +29,8 @@
                             [(ngModel)]="pedidoService.selectedPedido.fecha_p">
                     </div>
                  
+
+
                     <button class="btn btn-secondary">Save</button>
                 </form>
 
@@ -52,24 +54,32 @@
                         <thead>
                             <tr>
                                 <th>CANTIDAD</th>
-                                <th>TOTAL</th>
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
                                 <th>FECHA DEL PEDIDO</th>
+                                <th>Dias entrega</th>
                                 <th>FECHA ENTREGA</th>
                                 <th>DISPOSITIVO</th>
                                 <th>CLIENTE</th>
                                 <th>ESTADO</th>
-                                <th>ELIMINAR</th>
+                                <th>Numeros de serie</th>
+                                <th>ELIMINARRR</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let pedido of pedidoService.pedido">
                                 <td>{{pedido.cantidad}}</td>
-                                <td>{{pedido.dispositivo.precio * pedido.cantidad}} </td>
+                                <td>{{pedido.dispositivo?.precio}} </td>
+                                <td>{{pedido.cantidad}}</td>
                                 <td>{{pedido.fecha_p}}</td>
-                                <td>{{pedido.fecha_e}}</td>
-                                <td>{{pedido.dispositivo.modelo}}</td>
-                                <td>{{pedido.cliente.nombre}}</td>
+                                <td class="entrega" onLoad="prueba()">{{pedido.cliente?.dias_entrega}}</td>
+                                <td calss="fechaE">{{pedido.fecha_e}}</td>
+                                <td>{{pedido?.dispositivo?.modelo}}</td>
+                                <td>{{pedido?.cliente?.nombre}}</td>
                                 <td>{{pedido.estado}}</td>
+                                <td>{{pedido?.num_serie}}</td>
+                               
+                               
                                
                                 <td>
                                    

@@ -17,12 +17,13 @@ export class DispositivoService {
     codigo_modelo:'',
     existencia:0,
     precio:0,
-    ram:0,
+    memoria:0,
     almacenamiento:0,
     procesador: '',
     numero_cores:0,
     marca: '',
     numeroSerie:''
+
   };
 
   
@@ -36,6 +37,7 @@ export class DispositivoService {
     return this.http.get<Dispositivo[]>(this.URL_API);
   }
   createDispositivo(dispositivo: Dispositivo){
+    
     return this.http.post<string>(this.URL_API, dispositivo);
   }
   putDispositivo(dispositivo: Dispositivo){
