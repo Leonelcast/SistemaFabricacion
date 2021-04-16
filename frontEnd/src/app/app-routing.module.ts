@@ -68,7 +68,7 @@ const routes: Routes = [
     
   },
   {
-    path: 'historial',
+    path: 'Historial',
     component:HistorialComponent,
     canActivate: [AuthGuard]
     
