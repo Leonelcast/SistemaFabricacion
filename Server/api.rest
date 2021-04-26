@@ -1,6 +1,6 @@
 
 ###
-GET  http://localhost:5000/api/pedidos/read/aggregate
+GET   http://25.2.28.163:5000/api/pedidos
 
 ###
 GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1

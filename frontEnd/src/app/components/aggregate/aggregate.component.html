@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th>DIA DEL PEDIDO</th>
-                            <th>DISPOSITIVO</th>
+                           
                             <th>CANTIDAD</th>
 
                         </tr>
@@ -25,9 +25,7 @@
                     <tbody>
                         <tr *ngFor="let aggregate of aggregateService.aggregate">
                             <td>{{aggregate._id}}</td>
-                            <div *ngFor="let aggregate of aggregateService.aggregate">
-                            <td>{{aggregate.dispositivo}}</td>
-                            </div>
+                           
                             <td>{{aggregate.cantidad}}</td>
                         </tr>
 

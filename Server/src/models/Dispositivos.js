@@ -7,7 +7,7 @@ const dispositivoSchema = new Schema({
     codigo_modelo:{type:String, require: true},
     existencia:{type:Number, require: true},
     precio:{type: Number, require: true},
-    memoria:{type:Number, require: true},
+    ram:{type:Number, require: true},
     almacenamiento:{type:Number, require:true},
     procesador: {type: String, require: true},
     numero_cores:{type:Number, require: true},

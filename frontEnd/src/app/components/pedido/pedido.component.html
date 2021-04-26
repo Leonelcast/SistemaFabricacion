@@ -5,30 +5,33 @@
 
                 <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
                     <label>Cliente</label>
-                    <select [(ngModel)]="pedidoService.selectedPedido.cliente"  name="cliente" class="form-control">
-                        <option *ngFor="let cliente of clienteService.clientes" value="{{cliente._id}}">{{cliente.nombre}}
-                            </option>
-                            </select>
-                            <label>Dispositivo</label>
-                            <select [(ngModel)]="pedidoService.selectedPedido.dispositivo"  name="dispositivo" class="form-control" id="modelo">
-                                <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}"name="modelo" >{{dispositivo.modelo}}
-                                    </option>
-                                    </select>
-                                    <br>
-                    
+                    <select [(ngModel)]="pedidoService.selectedPedido.cliente" name="cliente" class="form-control">
+                        <option *ngFor="let cliente of clienteService.clientes" value="{{cliente._id}}">
+                            {{cliente.nombre}}
+                        </option>
+                    </select>
+                    <label>Dispositivo</label>
+                    <select [(ngModel)]="pedidoService.selectedPedido.dispositivo" name="dispositivo"
+                        class="form-control" id="modelo">
+                        <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}"
+                            name="modelo">{{dispositivo.modelo}}
+                        </option>
+                    </select>
+                    <br>
+
                     <div class="form-group">
                         <label>Cantidad</label>
                         <input type="text" class="form-control" placeholder=" Cantidad" name="cantidad"
                             [(ngModel)]="pedidoService.selectedPedido.cantidad">
                     </div>
-                 
+
 
                     <div class="form-group">
                         <label>Fecha del pedido</label>
                         <input type="date" class="form-control" placeholder="fecha_p" name="fecha_p"
                             [(ngModel)]="pedidoService.selectedPedido.fecha_p">
                     </div>
-                 
+
 
 
                     <button class="btn btn-secondary">Save</button>
@@ -41,6 +44,7 @@
     <div class="col-md-8">
 
         <div class="container-lg">
+            <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
@@ -78,11 +82,11 @@
                                 <td>{{pedido?.cliente?.nombre}}</td>
                                 <td>{{pedido.estado}}</td>
                                 <td>{{pedido?.num_serie}}</td>
-                               
-                               
-                               
+
+
+
                                 <td>
-                                   
+
                                     <button class="btn btn-danger bt-sm" (click)="deletePedido(pedido._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>
@@ -97,3 +101,4 @@
                 </div>
             </div>
         </div>
+    </div>

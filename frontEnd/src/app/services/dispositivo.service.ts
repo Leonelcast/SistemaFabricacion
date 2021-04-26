@@ -7,7 +7,7 @@ import{ Dispositivo} from '../models/dispositivos';
 })
 export class DispositivoService {
 
-  URL_API = 'http://localhost:5000/api/dispositivos';
+  URL_API = 'http://25.2.28.163:5000/api/dispositivos';
 
   selectedDispositivo: Dispositivo ={
     _id: '',
@@ -17,7 +17,7 @@ export class DispositivoService {
     codigo_modelo:'',
     existencia:0,
     precio:0,
-    memoria:0,
+    ram:0,
     almacenamiento:0,
     procesador: '',
     numero_cores:0,

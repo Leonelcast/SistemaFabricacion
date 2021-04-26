@@ -6,7 +6,7 @@ export interface Dispositivo {
     codigo_modelo: string,
     existencia: number,
     precio: number,
-    memoria: number,
+    ram: number,
     almacenamiento: number,
     numeroSerie: string,    
     procesador: string,

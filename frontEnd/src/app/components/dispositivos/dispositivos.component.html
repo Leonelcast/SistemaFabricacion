@@ -1,78 +1,85 @@
-<div class="row"> 
+<br>
+<br>
+<br>
+
+<div class="row">
     <div class="col-md-1">
-            <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Insertar
-          </button>
-          
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Color" name="color"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.color">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Descripcion" name="descripcion"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=" Modelo" name="modelo"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Codigo_modelo" name="codigo_modelo"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Existencia" name="existencia"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Precio" name="precio"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.precio">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="ram" name="ram"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.ram">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Almacenamiento"
+                                    name="almacenamiento"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
+                            </div>
+                            <div class="form-group">
+                                <input type="string" class="form-control" placeholder="Procesador" name="procesador"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Numero_Cores" name="numero_cores"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder=" Marca" name="marca"
+                                    [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                            </div>
+
+                            <button class="btn btn-secondary">Save</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <form #dispositivoForm="ngForm" (ngSubmit)="addDispositivo(dispositivoForm)">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Color" name="color"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.color">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Descripcion" name="descripcion"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder=" Modelo" name="modelo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Codigo_modelo" name="codigo_modelo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Existencia" name="existencia"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Precio" name="precio"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.precio">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="memoria" name="memoria"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Almacenamiento" name="almacenamiento"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
-                        </div>
-                        <div class="form-group">
-                            <input type="string" class="form-control" placeholder="Procesador" name="procesador"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Numero_Cores" name="numero_cores"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
-                        </div>
-                        <div class="form-group">
-                              <input type="text" class="form-control" placeholder=" Marca" name="marca"
-                              [(ngModel)]="dispositivoService.selectedDispositivo.marca">
-                          </div>
-                         
-                        <button class="btn btn-secondary">Save</button>
-                    </form>
-                </div>
-              </div>
             </div>
-          </div>
-      
+        </div>
+
     </div>
     <div class="col-md-10">
 
         <div class="container-lg">
+            <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
@@ -91,7 +98,7 @@
                                 <th>CODIGO MODELO</th>
                                 <th>EXISTENCIA</th>
                                 <th>PRECIO</th>
-                                <th>memoria</th>
+                                <th>RAM</th>
                                 <th>ALMACENAMIENTO</th>
                                 <th>PROCESADOR</th>
                                 <th>NUMERO DE CORES</th>
@@ -107,86 +114,101 @@
                                 <td>{{dispositivo.codigo_modelo}}</td>
                                 <td>{{dispositivo.existencia}}</td>
                                 <td>{{dispositivo.precio}}</td>
-                                <td>{{dispositivo.memoria}}</td>
+                                <td>{{dispositivo.ram}}</td>
                                 <td>{{dispositivo.almacenamiento}}</td>
                                 <td>{{dispositivo.procesador}}</td>
                                 <td>{{dispositivo.numero_cores}}</td>
                                 <td>{{dispositivo.marca}}</td>
                                 <td>
-                                      
-                                     <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" (click)="editDipositivo(dispositivo)">
-            <i class="material-icons">edit</i>
-            </button>
-            
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                      <form #updateForm="ngForm" (ngSubmit)="updateDispositivo(updateForm)">
-                        <div class="form-group">
-                            <input type="hidden" name="_id"
-                            [(ngModel)]="dispositivoService.selectedDispositivo._id">
-                        </div>  
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Color" name="color"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.color">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Descripcion" name="descripcion"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder=" Modelo" name="modelo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Codigo_modelo" name="codigo_modelo"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Existencia" name="existencia"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Precio" name="precio"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.precio">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="memoria" name="memoria"
-                            [(ngModel)]="dispositivoService.selectedDispositivo.memoria">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Almacenamiento" name="almacenamiento"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
-                        </div>
-                        <div class="form-group">
-                            <input type="string" class="form-control" placeholder="Procesador" name="procesador"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Numero_Cores" name="numero_cores"
-                                [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
-                        </div>
-                        <div class="form-group">
-                              <input type="text" class="form-control" placeholder=" Marca" name="marca"
-                              [(ngModel)]="dispositivoService.selectedDispositivo.marca">
-                          </div>
-                         
-                         
-                          <button class="btn btn-secondary" >Save</button>
-                      </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#exampleModal2" (click)="editDipositivo(dispositivo)">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form #updateForm="ngForm"
+                                                        (ngSubmit)="updateDispositivo(updateForm)">
+                                                        <div class="form-group">
+                                                            <input type="hidden" name="_id"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo._id">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Color"
+                                                                name="color"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.color">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Descripcion" name="descripcion"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.descripcion">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" Modelo" name="modelo"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.modelo">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Codigo_modelo" name="codigo_modelo"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.codigo_modelo">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Existencia" name="existencia"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.existencia">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Precio" name="precio"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.precio">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="ram" name="ram"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.ram">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Almacenamiento" name="almacenamiento"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.almacenamiento">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="string" class="form-control"
+                                                                placeholder="Procesador" name="procesador"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.procesador">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Numero_Cores" name="numero_cores"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.numero_cores">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder=" Marca"
+                                                                name="marca"
+                                                                [(ngModel)]="dispositivoService.selectedDispositivo.marca">
+                                                        </div>
+
+
+                                                        <button class="btn btn-secondary">Save</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <button class="btn btn-danger bt-sm" (click)="deleteDispositivo(dispositivo._id)">
                                         <i class="material-icons">delete_forever</i>
                                     </button>
@@ -201,3 +223,5 @@
                 </div>
             </div>
         </div>
+    </div>
+
