@@ -5,7 +5,7 @@ import{ Aggregate2} from '../models/aggregate2';
   providedIn: 'root'
 })
 export class Aggregate2Service {
-  URL_API = 'http://25.2.28.163:5000/api/pedidos/read/aggregate2';
+  URL_API = 'http://localhost:5000/api/pedidos/read/aggregate2';
   selectedAggregate2: Aggregate2 ={
     _id: '',
     nombre:'',

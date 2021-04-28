@@ -148,19 +148,17 @@ const transporter = nodemailer.createTransport({
 });
 
 
-var result = [
+let url =  "http://localhost:5000/api/dispositivos";
+let response2 = await fetch(url);
+
+if (response2.ok) { 
+  var siu = await response2.json();
+} else {
+  alert("Error-HTTP: " + response2.status);
+}
 
 
-  request({
-    url: "http://localhost:5000/api/dispositivos",
-    json: true
-    }, function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        result = (JSON.stringify(body, undefined)); 
-        console.log(result);
-      }
-  })
-]
+
 
 
 /*
@@ -176,11 +174,11 @@ request({
 
 
 
-const csv = json2csv.parse(result[0], ["_id", ]);
+const csv = json2csv.parse(siu, ["_id" ]);
 transporter.sendMail(
   {
     from: "Sistemafabrica2021@gmail.com",
-    to: "leonelcas.izq@gmail.com",
+    to: "chavarria181386@unis.edu.gt",
     subject: "Ventas dispositivos",
     text: "Ventas del mes",
     attachments: [
@@ -201,7 +199,7 @@ transporter.sendMail(
 );
 
 
-module.exports = app;
+//module.exports = app;
 
 }
 

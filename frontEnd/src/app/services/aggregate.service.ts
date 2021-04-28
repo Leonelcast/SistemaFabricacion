@@ -7,7 +7,7 @@ import {Dispositivo} from '../models/dispositivos';
 })
 export class AggregateService {
 
-  URL_API = 'http://25.2.28.163:5000/api/pedidos/read/aggregate';
+  URL_API = 'http://localhost:5000/api/pedidos/read/aggregate';
   selectedAggregate: Aggregate ={
     _id: '',
     dispositivo: '',

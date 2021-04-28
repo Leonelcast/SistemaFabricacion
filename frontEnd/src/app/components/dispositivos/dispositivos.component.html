@@ -1,19 +1,13 @@
-<br>
-<br>
-<br>
-
-<div class="row">
+<div class="row"> 
     <div class="col-md-1">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Insertar
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -83,16 +77,15 @@
                          
                         <button class="btn btn-secondary">Save</button>
                     </form>
-
                 </div>
+              </div>
             </div>
-        </div>
-
+          </div>
+      
     </div>
     <div class="col-md-10">
 
         <div class="container-lg">
-            <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
@@ -108,23 +101,13 @@
                                 <th>MODELO</th>
                                 <th>FOTOS</th>
                                 <th>DESCRIPCION</th>
-                                <th>ESPECIFICACIONES</th>                             
-                                <th>CODIGO MODELO</th>
-                                <th>EXISTENCIA</th>
-                                <th>PRECIO</th>
-                                <th>RAM</th>
-                                <th>ALMACENAMIENTO</th>
-                                <th>PROCESADOR</th>
-                                <th>NUMERO DE CORES</th>
-                                <th>MARCA</th>
-
+                                <th>ESPECIFICACIONES</th>                               
                                 <th>EDITAR/ELIMINAR</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let dispositivo of dispositivoService.dispositivos">
                                 <td>{{dispositivo.modelo}}</td>
-
                                 <td >
                                     <div id="a{{dispositivo._id}}" class="carousel slide" data-ride="carousel " >
                                         <div class="carousel-inner">
@@ -240,7 +223,6 @@
                                                                 <button class="btn btn-danger bt-sm" (click)="deleteDispositivo(dispositivo._id)">
                                                                     <i class="material-icons">delete_forever</i>
                                                                 </button>
-
                                 </td>
 
 
@@ -252,5 +234,3 @@
                 </div>
             </div>
         </div>
-    </div>
-
