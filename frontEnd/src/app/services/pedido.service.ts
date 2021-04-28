@@ -9,7 +9,7 @@ import {Dispositivo} from '../models/dispositivos';
 })
 export class PedidoService {
 
-  URL_API = 'http://localhost:5000/api/pedidos';
+  URL_API = 'http://25.2.28.163:5000/api/pedidos';
 
   selectedPedido: Pedidos ={
     _id: '',

@@ -9,7 +9,7 @@ import{ Historial} from '../models/historial';
 })
 export class HistorialService {
 
-  URL_API = 'http://localhost:5000/api/historial';
+  URL_API = 'http://25.2.28.163:5000/api/historial';
 
   selectedHistorial: Historial ={
     _id: '',
