@@ -1,13 +1,18 @@
 
 ###
-GET   http://25.2.28.163:5000/api/pedidos
+GET  http://localhost:5000/api/dispositivos
 
 ###
-GET http://localhost:5000/api/pedidos/604d4fb0fd9b334850e437b1
+POST  http://localhost:5000/api/sendmail
+Content-Type: application/json
+{
+    "to": "leonelcas.izq@gmail.com"
+}
 
 ### 
 
-GET http://localhost:5000/api/pedidos
+POST  http://localhost:5000/api/pedidos/enviar/mail
+Content-Type: application/json
 
 ### 
 GET http://localhost:5000/api/Sventas/intento

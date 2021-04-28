@@ -42,6 +42,7 @@ export class ReporteComponent implements OnInit {
  
   }
 
+
   getDispositivos() {
     this.dispositivoService.getDispositivos().subscribe(
       res => {

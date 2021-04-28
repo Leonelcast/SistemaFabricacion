@@ -1,7 +1,13 @@
 const pedidosController = {}
+const json2csv = require('json2csv')
+const nodemailer = require("nodemailer");
 
 const Pedidos = require('../models/Pedidos')
 const Dispositivos = require('../models/Dispositivos')
+const request = require('request');
+const { response } = require('../app');
+const { json } = require('express');
+const fetch = require('node-fetch')
 
 
 pedidosController.getPedidos = async (req, res) => {
@@ -128,6 +134,75 @@ pedidosController.getAggregate2 = async (req, res) => {
     res.json(getAggregate2)
 }
 
+
+pedidosController.sendMail = async(req, res) =>{
+    
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail",
+  auth: {
+    user: "Sistemafabrica2021@gmail.com",
+    pass: "hola12345q",
+  },
+});
+
+
+var result = [
+
+
+  request({
+    url: "http://localhost:5000/api/dispositivos",
+    json: true
+    }, function (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        result = (JSON.stringify(body, undefined)); 
+        console.log(result);
+      }
+  })
+]
+
+
+/*
+     
+request({
+    url: "http://localhost:5000/api/dispositivos",
+    json: true
+}, function Leo(err, res, body){
+     data = (JSON.stringify(body, undefined))
+     return data;
+
+})*/
+
+
+
+const csv = json2csv.parse(result[0], ["_id", ]);
+transporter.sendMail(
+  {
+    from: "Sistemafabrica2021@gmail.com",
+    to: "leonelcas.izq@gmail.com",
+    subject: "Ventas dispositivos",
+    text: "Ventas del mes",
+    attachments: [
+      {
+        filename: "file.csv",
+        content: csv,
+      },
+    ],
+  },
+  (err, info) => {
+    if (err) {
+      console.log("Error occurred. " + err.message);
+      return process.exit(1);
+    }
+    console.log("Message sent: %s", info.messageId);
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  }
+);
+
+
+module.exports = app;
+
+}
 
 
 module.exports = pedidosController;
