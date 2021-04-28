@@ -43,9 +43,10 @@ export class PedidoService {
      
       var num = Math.floor(Math.random() * (10000000000000 - 1000000000));
 
-      let numserie = {num:  "F-" + modelo + "/"+ num } ;
+      let numserie = "F-" + modelo + "/"+ num ;
      
-      pedido.num_serie.push(numserie)
+      pedido.num_serie.push(numserie);
+       pedido.num_serie.push("1")
 
 
     

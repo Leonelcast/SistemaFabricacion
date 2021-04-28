@@ -133,7 +133,8 @@ Content-Type: application/json
 
 
 ### 
-GET http://localhost:5000/api/pedidos
+
+get http://localhost:5000/api/pedidos
 
 ### 
 POST http://localhost:5000/api/pedidos/Gio

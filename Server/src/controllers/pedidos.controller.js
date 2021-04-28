@@ -25,9 +25,10 @@ pedidosController.createPedido2 = async  (req, res) => {
      
       var num = Math.floor(Math.random() * (10000000000000 - 1000000000));
 
-      let numserie = {num:  "F-" +newPedido.dispositivo + "/"+ num } ;
+      let numserie =  "F-" +newPedido.dispositivo + "/"+ num  ;
      
-      newPedido.num_serie.push(numserie)
+      newPedido.num_serie.push(numserie);
+      newPedido.num_serie.push("1");
 
 
     

@@ -17,12 +17,15 @@ export class DispositivoService {
     codigo_modelo:'',
     existencia:0,
     precio:0,
-    memoria:0,
+    ram:0,
     almacenamiento:0,
     procesador: '',
     numero_cores:0,
     marca: '',
-    numeroSerie:''
+    numeroSerie:'',
+    foto1:'',
+    foto2:'',
+    foto3:''
 
   };
 

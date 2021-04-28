@@ -6,13 +6,16 @@ export interface Dispositivo {
     codigo_modelo: string,
     existencia: number,
     precio: number,
-    memoria: number,
+    ram: number,
     almacenamiento: number,
     numeroSerie: string,    
     procesador: string,
     numero_cores: number,
     marca: string,
     updatedAt?: string,
-    _id: string
+    _id: string,
+    foto1:string,
+    foto2:string,
+    foto3:string
    
     }
