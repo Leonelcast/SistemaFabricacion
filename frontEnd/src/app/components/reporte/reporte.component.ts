@@ -4,6 +4,7 @@ import { DispositivoService } from '../../services/dispositivo.service';
 import {ClientesService} from '../../services/clientes.service'
 import { NgForm } from '@angular/forms';
 import * as XLSX from 'xlsx';
+import {CorreoService} from '../../services/correo.service';
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.component.html',
@@ -12,7 +13,7 @@ import * as XLSX from 'xlsx';
 export class ReporteComponent implements OnInit {
  
 
-  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService, public clienteService: ClientesService) { }
+  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService, public clienteService: ClientesService,  public correoService: CorreoService,) { }
 
   ngOnInit(): void {
     this.getPedidos();
@@ -72,5 +73,10 @@ export class ReporteComponent implements OnInit {
      );
  
    }
-
+   sendCorreo(form: NgForm){
+     this.correoService.sendCorreo(form.value).subscribe(
+       res=>console.log(res),
+       err=> console.error(err)
+     )
+   }
 }
