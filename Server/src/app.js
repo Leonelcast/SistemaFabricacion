@@ -25,6 +25,8 @@ app.use("/api/cliente", require('./routes/cliente.routes'));
 
 app.use("/api/historial", require('./routes/historial.routes'));
 
+app.use("/api/serie", require('./routes/serie.routes'));
+
 
 
 

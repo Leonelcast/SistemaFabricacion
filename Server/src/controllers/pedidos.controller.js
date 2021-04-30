@@ -3,6 +3,7 @@ const json2csv = require('json2csv')
 const nodemailer = require("nodemailer");
 
 const Pedidos = require('../models/Pedidos')
+const Serie = require('../models/Serie')
 const Dispositivos = require('../models/Dispositivos')
 const request = require('request');
 const { response } = require('../app');
@@ -28,14 +29,16 @@ pedidosController.createPedido2 = async  (req, res) => {
     
     
     for(var i=1; i <= newPedido.cantidad ; i++){
-     
+        const newSerie = new Serie(req.body);
       var num = Math.floor(Math.random() * (10000000000000 - 1000000000));
-
-      let numserie =  "F-" +newPedido.dispositivo + "/"+ num  ;
-     
+      let numserie =  "F-" +newPedido.dispositivo + "-"+ num ;     
       newPedido.num_serie.push(numserie);
-      newPedido.num_serie.push("1");
-
+      newPedido.num_serie.push("1");      
+      newSerie.num_serie = numserie; 
+      newSerie.estado = "Activo"; 
+      newSerie.pedido = newPedido._id; 
+        
+      await newSerie.save()
 
     
 
@@ -59,10 +62,15 @@ pedidosController.updatePedido = async (req, res) => {
 //DELETE
 pedidosController.deletePedido = async (req, res) => {
     await Pedidos.findByIdAndDelete(req.params.id)
+    await Serie.remove({'pedido':req.params.id})
    res.json({status: 'Pedido eliminado'})
 
 }
-
+//Buscar pedido 
+pedidosController.getNum = async (req, res) => {
+    const pedidos = await Pedidos.find().populate('dispositivo').populate('cliente')
+    res.json(pedidos)
+}
 
 
 
@@ -148,7 +156,7 @@ const transporter = nodemailer.createTransport({
 });
 
 
-let url =  "http://localhost:5000/api/dispositivos";
+let url =  "http://localhost:8081/getReporte";
 let response2 = await fetch(url);
 
 if (response2.ok) { 

@@ -17,7 +17,7 @@ clienteController.createCliente = async  (req, res) => {
 //individual
 clienteController.getCliente = async (req, res) => {
    const cliente = await Cliente.findById(req.params.id)
-    res.send(Cliente)
+    res.send(cliente)
 }
 //UPDATE
 clienteController.updateCliente = async (req, res) => {

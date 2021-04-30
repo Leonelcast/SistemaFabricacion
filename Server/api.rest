@@ -147,3 +147,17 @@ Content-Type: application/json
 
 { "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6073c82dcabd0d330c47be8c", "user": "60497a8ae2b1596118284fd4" }
 
+
+### 
+get http://localhost:5000/api/pedidos/buscar/F-607a4c6600a60e31944c2e5c-846834460081
+
+//Para los numeros de serie
+### 
+get http://localhost:5000/api/serie
+
+### 
+get http://localhost:5000/api/serie/608a007a5833ee1c50730884
+
+
+### 
+get http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-7644804805156
