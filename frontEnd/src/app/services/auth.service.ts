@@ -7,7 +7,7 @@ import {User} from '../models/user';
   providedIn: 'root'
 })
 export class AuthService {
-  private URL = 'http://25.2.28.163:5000/api'
+  private URL = 'http://localhost:5000/api'
   selectedUser: User={
     _id:'',
     nombre:'',
@@ -20,7 +20,7 @@ export class AuthService {
     private router: Router) { }
     
     
-    URL_API = 'http://25.2.28.163:5000/api/users';
+    URL_API = 'http://localhost:5000/api/users';
     user: User[] = [];
     
   

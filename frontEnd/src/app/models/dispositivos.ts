@@ -13,6 +13,9 @@ export interface Dispositivo {
     numero_cores: number,
     marca: string,
     updatedAt?: string,
-    _id: string
+    _id: string,
+    foto1:string,
+    foto2:string,
+    foto3:string
    
     }

@@ -14,7 +14,9 @@ const pedidoSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Cliente'
     },
+  
     num_serie: []
+
    
 });
 module.exports = model("Pedido", pedidoSchema);

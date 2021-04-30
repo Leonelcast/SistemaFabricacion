@@ -17,7 +17,7 @@ import {ClientesComponent} from './components/clientes/clientes.component';
 import {HistorialComponent} from './components/historial/historial.component';
 import {AggregateComponent} from './components/aggregate/aggregate.component';
 import {Aggregate2Component} from './components/aggregate2/aggregate2.component';
-
+import {SerieComponent } from './components/serie/serie.component';
 
 
 
@@ -82,6 +82,10 @@ const routes: Routes = [
     path: 'aggregate2',
     component:Aggregate2Component
   },
+  {
+    path: 'serie',
+    component:SerieComponent
+  }
 
 
 ];

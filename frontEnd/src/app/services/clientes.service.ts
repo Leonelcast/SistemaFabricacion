@@ -7,7 +7,7 @@ import{ Cliente} from '../models/cliente';
 })
 export class ClientesService {
 
-  URL_API = 'http://25.2.28.163:5000/api/cliente';
+  URL_API = 'http://localhost:5000/api/cliente';
 
   selectedCliente: Cliente ={
     _id: '',

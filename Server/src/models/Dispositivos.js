@@ -11,7 +11,10 @@ const dispositivoSchema = new Schema({
     almacenamiento:{type:Number, require:true},
     procesador: {type: String, require: true},
     numero_cores:{type:Number, require: true},
-    marca: {type: String, require: true}
+    marca: {type: String, require: true},
+    foto1: {type: String, require: true},
+    foto2: {type: String, require: true},
+    foto3: {type: String, require: true}
     
 
 });

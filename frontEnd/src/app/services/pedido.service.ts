@@ -9,7 +9,7 @@ import {Dispositivo} from '../models/dispositivos';
 })
 export class PedidoService {
 
-  URL_API = 'http://25.2.28.163:5000/api/pedidos';
+  URL_API = 'http://localhost:5000/api/pedidos';
 
   selectedPedido: Pedidos ={
     _id: '',
@@ -43,9 +43,10 @@ export class PedidoService {
      
       var num = Math.floor(Math.random() * (10000000000000 - 1000000000));
 
-      let numserie = {num:  "F-" + modelo + "/"+ num } ;
+      let numserie = "F-" + modelo + "/"+ num ;
      
-      pedido.num_serie.push(numserie)
+      pedido.num_serie.push(numserie);
+       pedido.num_serie.push("1")
 
 
     
