@@ -48,27 +48,33 @@
             </div>
             <br>
             <br>
+
+            <input
+            type="text"
+            class="forms-control"
+            placeholder="Buscar Nombre"
+            [(ngModel)]="filterpost"
+            name="filterpost"   />
+       
             <table id="excel-table" class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>CANTIDAD</th>
-                        <th>TOTAL</th>
-                        <th>FECHA DEL PEDIDO</th>
-                        <th>FECHA ENTREGA</th>
-                        <th>DISPOSITIVO</th>
-                        <th>CLIENTE</th>
-                        <th>ESTADO</th>
+                        <th>Terminal vendida</th>
+                        <th>Cantidad</th>
+                        <th>Cantidad por adelantado</th>
+                        <th>Total Q</th>
+                        <th>Vendedor</th>
+                    
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pedido of pedidoService.pedido">
-                        <td>{{pedido.cantidad}}</td>
-                        <td>{{pedido.dispositivo.precio * pedido.cantidad}} </td>
-                        <td>{{pedido.fecha_p}}</td>
-                        <td>{{pedido.fecha_e}}</td>
-                        <td>{{pedido.dispositivo.modelo}}</td>
-                        <td>{{pedido.cliente.nombre}}</td>
-                        <td>{{pedido.estado}}</td>
+                    <tr *ngFor="let pedido of reporteService.reportes  | filter2: filterpost ">
+                        <td>{{pedido.nombret}}</td>
+                        <td>{{pedido.cantidadp}}</td>
+                        <td>{{pedido.cantidadp_a}}</td>
+                        <td>{{pedido.total_c}}</td>
+                        <td>{{pedido.ventas}}</td>
+                     
                     </tr>
 
                 </tbody>

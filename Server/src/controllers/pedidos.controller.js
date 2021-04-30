@@ -236,4 +236,10 @@ transporter.sendMail(
 }
 
 
+pedidosController.getMail = async (req, res) => {
+    const pedidos = await Pedidos.find().populate('dispositivo').populate('cliente')
+    res.json(pedidos)
+}
+
+
 module.exports = pedidosController;

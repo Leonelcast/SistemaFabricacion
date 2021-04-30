@@ -161,3 +161,7 @@ get http://localhost:5000/api/serie/608a007a5833ee1c50730884
 
 ### 
 get http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-7644804805156
+
+
+### 
+get http://localhost:8081/getReporte

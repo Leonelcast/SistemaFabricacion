@@ -1,3 +1,4 @@
 export interface Correo { 
-    email: String| null,
+    email: String| null
+
     }

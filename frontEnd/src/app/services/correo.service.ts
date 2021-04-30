@@ -7,11 +7,12 @@ import { Correo } from '../models/correo';
 })
 export class CorreoService {
 
-  URL_API = 'http://25.2.28.163:5000/api/pedidos/enviar/mail';
+  URL_API = 'http://localhost:5000/api/pedidos/enviar/mail';
 
   selectedCorreo: Correo = {
 
     email: null
+   
   };
   historia: Correo[] = [];
   constructor(private http: HttpClient) { }
@@ -19,5 +20,7 @@ export class CorreoService {
   sendCorreo(correo: Correo){
     return this.http.post<string>(this.URL_API, correo);
   }
+  
+ 
 
 }

@@ -12,6 +12,7 @@ router.delete('/:id', pedidosController.deletePedido);
 router.get('/read/aggregate', pedidosController.getAggregate);
 router.get('/read/aggregate2', pedidosController.getAggregate2);
 router.post('/enviar/mail',pedidosController.sendMail);
+//router.get('/enviar/mail',pedidosController.getMail);
 
 router.get('/buscar/:num',pedidosController.getNum);
 

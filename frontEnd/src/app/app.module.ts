@@ -21,7 +21,7 @@ import { Aggregate2Component } from './components/aggregate2/aggregate2.componen
 
 import { SerieComponent } from './components/serie/serie.component';
 import { FilterPipe } from './pipes/filter.pipe'
-
+import { FilterPipe2 } from './pipes/filter2.pipe'
 
 @NgModule({
   declarations: [
@@ -39,7 +39,10 @@ import { FilterPipe } from './pipes/filter.pipe'
     AggregateComponent,
     Aggregate2Component,
     SerieComponent,
-    FilterPipe
+    FilterPipe,
+    FilterPipe2
+   
+  
   ],
   imports: [
     BrowserModule,

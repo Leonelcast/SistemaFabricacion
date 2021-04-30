@@ -5,6 +5,7 @@ import {ClientesService} from '../../services/clientes.service'
 import { NgForm } from '@angular/forms';
 import * as XLSX from 'xlsx';
 import {CorreoService} from '../../services/correo.service';
+import { ReporteService } from 'src/app/services/mostrarCorreo.service';
 @Component({
   selector: 'app-reporte',
   templateUrl: './reporte.component.html',
@@ -13,12 +14,13 @@ import {CorreoService} from '../../services/correo.service';
 export class ReporteComponent implements OnInit {
  
 
-  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService, public clienteService: ClientesService,  public correoService: CorreoService,) { }
+  constructor(public pedidoService: PedidoService, public dispositivoService: DispositivoService, public clienteService: ClientesService,  public correoService: CorreoService, public reporteService: ReporteService) { }
 
   ngOnInit(): void {
     this.getPedidos();
     this.getDispositivos();
     this.getClientes();
+    this.getMail();
   }
 
   fileName="Reporte.xls";
@@ -79,4 +81,21 @@ export class ReporteComponent implements OnInit {
        err=> console.error(err)
      )
    }
+
+   getMail() {
+    this.reporteService.getRepos().subscribe(
+      res => {
+        this.reporteService.reportes = res;
+      },
+      err => console.error(err)
+    );
+
+  }
+
+
+
+
+
+    filterpost = '';
+
 }
