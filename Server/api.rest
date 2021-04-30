@@ -1,12 +1,23 @@
+###
+POST http://localhost:5000/api/pedidos/enviar/mail 
+Content-Type: application/json
+
+{   
+    
+    "email": "dubon181014@unis.edu.gt"
+
+}
+
+
 
 ###
 GET  http://localhost:5000/api/dispositivos
 
 ###
-POST  http://localhost:5000/api/sendmail
+POST  http://localhost:5000/api/pedidos/enviar/mail
 Content-Type: application/json
 {
-    "to": "leonelcas.izq@gmail.com"
+    "email": "leonelcas.izq@gmail.com"
 }
 
 ### 
@@ -54,17 +65,6 @@ Content-Type: application/json
 ###
 Get http://localhost:5000/api/users 
 
-###
-POST http://localhost:5000/api/users 
-Content-Type: application/json
-
-{   
-    "email": "Tigo",
-    "email": "LeoneI@gmail.com",
-    "password":"password",
-    "roles": "hola"
-
-}
 
 ### 
 POST http://localhost:5000/api/users/signIn 

@@ -6,7 +6,6 @@ const Pedidos = require('../models/Pedidos')
 const Serie = require('../models/Serie')
 const Dispositivos = require('../models/Dispositivos')
 const request = require('request');
-const { response } = require('../app');
 const { json } = require('express');
 const fetch = require('node-fetch')
 
@@ -142,11 +141,47 @@ pedidosController.getAggregate2 = async (req, res) => {
     ]).allowDiskUse(true);
     res.json(getAggregate2)
 }
+/*
+
+pedidosController.sendMail = async(req, res) =>{
+
+    
+        const {email} = req.body;
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            service: "Gmail",
+            auth: {
+              user: "Sistemafabrica2021@gmail.com",
+              pass: "hola12345q",
+            },
+        });
+        
+        const msg = {
+            from: '"The Exapress App" <theExpressApp@example.com>', // sender address
+            to: `${email}`, // list of receivers
+            subject: "Sup", // Subject line
+            text: "Long time no see", // plain text body
+        }
+        // send mail with defined transport object
+        const info = await transporter.sendMail(msg);
+    
+        console.log("Message sent: %s", info.messageId);
+        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+    
+        // Preview only available when sending through an Ethereal account
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+        
+        res.send('Email Sent!')
+    
+}*/
+    
+
+
 
 
 pedidosController.sendMail = async(req, res) =>{
-    
-
+const {email} = req.body; 
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -156,8 +191,11 @@ const transporter = nodemailer.createTransport({
 });
 
 
+
+
 let url =  "http://localhost:8081/getReporte";
 let response2 = await fetch(url);
+
 
 if (response2.ok) { 
   var siu = await response2.json();
@@ -167,26 +205,12 @@ if (response2.ok) {
 
 
 
-
-
-/*
-     
-request({
-    url: "http://localhost:5000/api/dispositivos",
-    json: true
-}, function Leo(err, res, body){
-     data = (JSON.stringify(body, undefined))
-     return data;
-
-})*/
-
-
-
-const csv = json2csv.parse(siu, ["_id" ]);
+const csv = json2csv.parse(siu, ["_id", ]);
 transporter.sendMail(
   {
     from: "Sistemafabrica2021@gmail.com",
-    to: "chavarria181386@unis.edu.gt",
+    to: `${email}`,
+
     subject: "Ventas dispositivos",
     text: "Ventas del mes",
     attachments: [
