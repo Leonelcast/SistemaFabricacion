@@ -182,6 +182,7 @@ pedidosController.sendMail = async(req, res) =>{
 
 pedidosController.sendMail = async(req, res) =>{
 const {email} = req.body; 
+const {excel} = req.body; 
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -205,7 +206,7 @@ if (response2.ok) {
 
 
 
-const csv = json2csv.parse(siu, ["_id", ]);
+/*const csv = json2csv.parse(siu, ["_id", ]);*/
 transporter.sendMail(
   {
     from: "Sistemafabrica2021@gmail.com",
@@ -216,7 +217,7 @@ transporter.sendMail(
     attachments: [
       {
         filename: "file.csv",
-        content: csv,
+        content: `${excel}`,
       },
     ],
   },

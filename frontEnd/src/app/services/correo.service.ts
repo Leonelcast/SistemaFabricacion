@@ -11,7 +11,8 @@ export class CorreoService {
 
   selectedCorreo: Correo = {
 
-    email: null
+    email: null,
+    excel: null
    
   };
   historia: Correo[] = [];

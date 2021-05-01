@@ -4,7 +4,8 @@ Content-Type: application/json
 
 {   
     
-    "email": "dubon181014@unis.edu.gt"
+    "email": "dubon181014@unis.edu.gt",
+    "excel": "intento.csv"
 
 }
 

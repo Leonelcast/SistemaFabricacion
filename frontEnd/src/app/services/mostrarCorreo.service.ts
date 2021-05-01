@@ -8,8 +8,8 @@ import { forkJoin } from 'rxjs';
 })
 export class ReporteService {
 
-  URL_API = 'http://25.116.183.51:8081/getReporte';
-  URL_API2 = 'http://25.2.28.209:8081/getReporte';
+  URL_API = 'http://localhost:8081/getReporte';
+
 
   selectedReporte: Reporte = {
 
