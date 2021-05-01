@@ -14,11 +14,11 @@ export class SerieComponent implements OnInit {
   constructor(public serieS:SerieService) { }
   filterpost = '';
   ngOnInit(): void {
-    this.getClientes();
+    this.getSeries();
   }
 
   
-  getClientes() {
+  getSeries() {
     this.serieS.getSeries().subscribe(
       res => {
         this.serieS.series = res;
@@ -33,7 +33,7 @@ export class SerieComponent implements OnInit {
     if(form.value._id){
       this.serieS.putSeries(form.value).subscribe(
        res => {
-         this.getClientes();
+         this.getSeries();
        },
        err => console.error(err)
      )
