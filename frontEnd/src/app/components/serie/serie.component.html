@@ -65,8 +65,8 @@
                                               <div class="modal-body">
                                                 <form #updateForm="ngForm" (ngSubmit)="updateSerie(updateForm)">
                                                     <div class="form-group">
-                                                        <input type="" name="_id"
-                                                        [(ngModel)]="serieS.selectedSerie._id">
+                                                        <input type="" name="num_serie"
+                                                        [(ngModel)]="serieS.selectedSerie.num_serie">
                                                     </div>  
                                                     <div class="form-group">
                                                           <input type="text" class="form-control" placeholder="Estado" name="estado"
@@ -75,7 +75,7 @@
                              
                                                       
                                                      
-                                                      <button class="btn btn-secondary" >Save</button>
+                                                      <button class="btn btn-secondary" >Savee</button>
                                                   </form>
                                               </div>
                                             </div>

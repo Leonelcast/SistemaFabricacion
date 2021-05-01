@@ -30,7 +30,7 @@ export class SerieComponent implements OnInit {
 
 
   updateSerie(form: NgForm){
-    if(form.value._id){
+    if(form.value.num_serie){
       this.serieS.putSeries(form.value).subscribe(
        res => {
          this.getSeries();

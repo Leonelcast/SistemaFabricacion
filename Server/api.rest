@@ -160,7 +160,7 @@ get http://localhost:5000/api/serie/608a007a5833ee1c50730884
 
 
 ### 
-get http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-7644804805156
+get http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-8770696495205
 
 
 ### 
@@ -169,7 +169,7 @@ get http://localhost:8081/getReporte
 
 
 ###
-put  http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-5068648472854
+put  http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-8770696495205
 Content-Type: application/json
 {
 

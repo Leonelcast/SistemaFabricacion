@@ -36,7 +36,7 @@ export class SerieService {
     return this.http.post<string>(this.URL_API, series);
   }
   putSeries(series: Serie){
-    return this.http.put(`${this.URL_API}/${series._id}`, series);
+    return this.http.put(`${this.URL_API}/${series.num_serie}`, series);
 
   }
   deleteSeries(_id: string){

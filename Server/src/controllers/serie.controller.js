@@ -10,15 +10,12 @@ serieController.getSeries = async (req, res) => {
 
 
 serieController.getSeriename = async (req, res) => {
-    const serie = await Serie.find({'num_serie': req.params.num}).populate('dispositivo').populate('cliente')
-    
-    res.json(serie)
+    const serie = await Serie.find({'num_serie':req.params.num}).populate('dispositivo').populate('cliente')
+        res.send(serie)
 }
 
 serieController.updateSerie = async (req, res) => {
-
-
-    await Serie.findById(req.params.id, req.body)
+    await Serie.findOneAndUpdate({'num_serie':req.params.num}, req.body)
     res.json({status: 'Pedido actualizado'})
 }
 
