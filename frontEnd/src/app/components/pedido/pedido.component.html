@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <form #pedidoForm="ngForm" (ngSubmit)="addPedido(pedidoForm)">
+                    <label>Cliente</label>
+                    <select [(ngModel)]="pedidoService.selectedPedido.cliente" name="cliente" class="form-control">
+                        <option *ngFor="let cliente of clienteService.clientes" value="{{cliente._id}}">
+                            {{cliente.nombre}}
+                        </option>
+                    </select>
+                    <label>Dispositivo</label>
+                    <select [(ngModel)]="pedidoService.selectedPedido.dispositivo" name="dispositivo"
+                        class="form-control" id="modelo">
+                        <option *ngFor="let dispositivo of dispositivoService.dispositivos" value="{{dispositivo._id}}"
+                            name="modelo">{{dispositivo.modelo}}
+                        </option>
+                    </select>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Cantidad</label>
+                        <input type="text" class="form-control" placeholder=" Cantidad" name="cantidad"
+                            [(ngModel)]="pedidoService.selectedPedido.cantidad">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Fecha del pedido</label>
+                        <input type="date" class="form-control" placeholder="fecha_p" name="fecha_p"
+                            [(ngModel)]="pedidoService.selectedPedido.fecha_p">
+                    </div>
+
+
+
+                    <button class="btn btn-secondary">Save</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+        <div class="container-lg">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2>PEDIDOS</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>CANTIDAD</th>
+                                <th>PRECIO</th>
+                                <th>CANTIDAD</th>
+                                <th>FECHA DEL PEDIDO</th>
+                                <th>Dias entrega</th>
+                                <th>FECHA ENTREGA</th>
+                                <th>DISPOSITIVO</th>
+                                <th>CLIENTE</th>
+                                <th>ESTADO</th>
+                                <th>Numeros de serie</th>
+                                <th>ELIMINARRR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pedido of pedidoService.pedido">
+                                <td>{{pedido.cantidad}}</td>
+                                <td>{{pedido.dispositivo?.precio}} </td>
+                                <td>{{pedido.cantidad}}</td>
+                                <td>{{pedido.fecha_p}}</td>
+                                <td class="entrega" onLoad="prueba()">{{pedido.cliente?.dias_entrega}}</td>
+                                <td calss="fechaE">{{pedido.fecha_e}}</td>
+                                <td>{{pedido?.dispositivo?.modelo}}</td>
+                                <td>{{pedido?.cliente?.nombre}}</td>
+                                <td>{{pedido.estado}}</td>
+                                <td>{{pedido?.num_serie}}</td>
+
+
+
+                                <td>
+
+                                    <button class="btn btn-danger bt-sm" (click)="deletePedido(pedido._id)">
+                                        <i class="material-icons">delete_forever</i>
+                                    </button>
+                                </td>
+
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

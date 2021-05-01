@@ -1,50 +1,195 @@
 ###
-GET http://localhost:5000/api/users
-
-###
-POST http://localhost:5000/api/dispositivos
+POST http://localhost:5000/api/pedidos/enviar/mail 
 Content-Type: application/json
 
-{
-    "numeroSerie": "Eliminar",
-    "modelo":"qwert",
-    "marca": "qwdf",
-    "tipo": "Smartphone",
-    "memoria": "128",
-    "procesador": "hola",
-    "resolucion":"1080",
-    "precio":1000
+{   
+    
+    "email": "dubon181014@unis.edu.gt"
+
 }
 
+
+
 ###
+GET  http://localhost:5000/api/dispositivos
+
+###
+POST  http://localhost:5000/api/pedidos/enviar/mail
+Content-Type: application/json
+{
+    "email": "leonelcas.izq@gmail.com"
+}
+
+### 
+
+POST  http://localhost:5000/api/pedidos/enviar/mail
+Content-Type: application/json
+
+### 
+GET http://localhost:5000/api/Sventas/intento
+
+
+### 
+GET http://localhost:5000/api/pedidos/6046a9ed5181b70314f6d352
+
+### 
+POST http://localhost:5000/api/dispositivos Content-Type: application/json
+
+{
+"numeroSerie": "Eliminar", "modelo":"qwert", "marca": "qwdf", "tipo": "Smartphone", "memoria": "128", "procesador": "hola", "resolucion":"1080", "precio":1000
+}
+
+### 
 GET http://localhost:5000/api/dispositivos
 
 ###
-DELETE http://localhost:5000/api/users/60441c9a38ab18207cc23d86
+DELETE http://localhost:5000/api/pedidos/60497552e2b1596118284fd2
 
 
 ###
-PUT http://localhost:5000/api/dispositivos/60122dc3d2e3e11640fa06ee
+PUT localhost:5000/api/pedidos/60497552e2b1596118284fd2
 Content-Type: application/json
 
 {
-    "numeroSerie": "ActualizadoJAJA"
 
+  "cantidad": 6,
+  "total": 458,
+  "fecha_p": "2021-03-10T06:00:00.000Z",
+  "fecha_e": "2021-03-15T06:00:00.000Z",
+  "dispositivo": "6046a9ed5181b70314f6d352",
+  "user": "60441ce038ab18207cc23d87",
+  "createdAt": "2021-03-11T01:41:38.689Z",
+  "updatedAt": "2021-03-11T01:41:38.689Z"
 }
+
 ###
-POST http://localhost:5000/api/users
+Get http://localhost:5000/api/users 
+
+
+### 
+POST http://localhost:5000/api/users/signIn 
 Content-Type: application/json
 
 {
-    "email": "LeonelCI@gmail.com",
-    "password":"password"
+"email": "LeonelCI@gmail.com", "password":"qwer"
+}
+
+### 
+POST http://localhost:5000/api/pedidos/Gio
+Content-Type: application/json
+
+
+{
+"cantidad": 6, 
+"total": 458, 
+"fecha_p": "03-10-2021", 
+"fecha_e": "03-15-2021", 
+"dispositivo": "6046a9ed5181b70314f6d352", 
+"user": "60497a8ae2b1596118284fd4"
+}
+
+{ "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6046a9ed5181b70314f6d352", "user": "60497a8ae2b1596118284fd4" }
+
+### 
+POST http://localhost:5000/api/cliente
+Content-Type: application/json
+
+{
+
+    "nombre":"Prueba",
+    "patente":"Prueba",
+    "usuario":"Prueba",
+    "contraseña":"Prueba",
+    "ip":"Prueba",
+    "puerto":"Prueba"
 }
 
 ###
-POST http://localhost:5000/api/users/signIn
+GET http://localhost:5000/api/cliente
+
+
+### 
+POST http://localhost:5000/api/historial
 Content-Type: application/json
 
 {
-    "email": "LeonelCI@gmail.com",
-    "password":"qwer"
+
+    "user":"Prueba",
+    "accion":"Prueba",
+    "fecha":"2021-03-15T06:00:00.000Z"
+   
+}
+
+###
+
+get http://localhost:5000/api/historial/borrar
+
+
+
+###
+post http://localhost:5000/api/pedidos/607917c599554f372401571c
+Content-Type: application/json
+
+{
+
+    "Estado":"Entregado"
+    
+}
+
+
+### 
+
+get http://localhost:5000/api/pedidos
+
+### 
+POST http://localhost:5000/api/pedidos/Gio
+Content-Type: application/json
+
+{ "cantidad": 6, "total": 458, "fecha_p": "03-10-2021", "fecha_e": "03-15-2021", "dispositivo": "6073c82dcabd0d330c47be8c", "user": "60497a8ae2b1596118284fd4" }
+
+
+### 
+get http://localhost:5000/api/pedidos/buscar/F-607a4c6600a60e31944c2e5c-846834460081
+
+//Para los numeros de serie
+### 
+get http://localhost:5000/api/serie
+
+### 
+get http://localhost:5000/api/serie/608a007a5833ee1c50730884
+
+
+### 
+get http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-8770696495205
+
+
+### 
+get http://localhost:8081/getReporte
+
+
+
+###
+put  http://localhost:5000/api/serie/F-607a4c6600a60e31944c2e5c-8770696495205
+Content-Type: application/json
+{
+
+  "estado": "Devuelto"
+  
+}
+
+
+### 
+get http://127.0.0.1:5000/api/serie/F-607a4c6600a60e31944c2e5c-8398662579001
+
+
+
+
+### 
+POST http://localhost:5000/api/users 
+Content-Type: application/json
+{
+"email": "LeonelCI@gmail.com", 
+"password":"qwer"
+
+
 }

@@ -9,6 +9,7 @@ import {Router} from '@angular/router'
 export class SigninComponent implements OnInit {
 
   user = {
+  
     email: '',
     password: ''
   }
@@ -24,8 +25,14 @@ export class SigninComponent implements OnInit {
     this.authService.signIn(this.user)
     .subscribe(
       res => {
-        console.log(res)
+        console.log(res);
+        console.log("algoasdfasdfasdfsadfasdfasfasdfsdadfdfasdfs");
+        console.log(this.user.email);
+          
         localStorage.setItem('token', res.token);
+        localStorage.setItem('nombre', this.user.email);
+
+
         this.router.navigate(['/dispositivos'])
       },
       err => console.log(err)

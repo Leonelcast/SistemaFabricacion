@@ -20,6 +20,7 @@ dispositivosController.getDispositivo = async (req, res) => {
    const dispositivo = await Dispositivos.findById(req.params.id)
     res.send(dispositivo)
 }
+
 //UPDATE
 dispositivosController.updateDispositivos = async (req, res) => {
     await Dispositivos.findByIdAndUpdate(req.params.id, req.body)
