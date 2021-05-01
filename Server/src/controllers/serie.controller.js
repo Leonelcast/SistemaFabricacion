@@ -15,6 +15,12 @@ serieController.getSeriename = async (req, res) => {
     res.json(serie)
 }
 
+serieController.updateSerie = async (req, res) => {
+
+
+    await Serie.findById(req.params.id, req.body)
+    res.json({status: 'Pedido actualizado'})
+}
 
 
 

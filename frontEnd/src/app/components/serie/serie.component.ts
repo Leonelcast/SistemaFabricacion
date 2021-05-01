@@ -28,4 +28,21 @@ export class SerieComponent implements OnInit {
 
   }
 
+
+  updateSerie(form: NgForm){
+    if(form.value._id){
+      this.serieS.putSeries(form.value).subscribe(
+       res => {
+         this.getClientes();
+       },
+       err => console.error(err)
+     )
+    }
+    location.reload();
+  }
+
+    editSerie(serie: Serie) {
+      this.serieS.selectedSerie = serie;
+    }
+
 }
