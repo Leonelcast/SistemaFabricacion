@@ -19,6 +19,12 @@ serieController.updateSerie = async (req, res) => {
     res.json({status: 'Pedido actualizado'})
 }
 
+serieController.createSerie = async  (req, res) => {
+    const newSerie = new Serie(req.body); 
+      await newSerie.save()
+    console.log(req.body)
+    res.json('pedido creado')
+}
 
 
 module.exports = serieController;

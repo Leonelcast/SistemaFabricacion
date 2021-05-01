@@ -176,3 +176,20 @@ Content-Type: application/json
   "estado": "Devuelto"
   
 }
+
+
+### 
+get http://127.0.0.1:5000/api/serie/F-607a4c6600a60e31944c2e5c-8398662579001
+
+
+
+
+### 
+POST http://localhost:5000/api/users 
+Content-Type: application/json
+{
+"email": "LeonelCI@gmail.com", 
+"password":"qwer"
+
+
+}
